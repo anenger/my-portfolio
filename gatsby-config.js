@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `My Portfolio`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://www.anenger.com`,
   },
   plugins: [
     "gatsby-plugin-image",
