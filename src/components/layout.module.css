@@ -1,3 +1,5 @@
+@import "./global.css";
+
 body {
   background-color: #2f3e46;
   animation: fadeInAnimation ease 2s;
@@ -31,8 +33,8 @@ body {
 }
 
 .nav-link-text {
-  color: #cad2c5;
-  font-size: 20px;
+  color: var(--subtitle-text-color);
+  font-size: var(--subtitle-text-size);
   font-family: "Spinnaker";
   text-decoration: none;
   box-shadow: inset 0 0 0 0 #54b3d6;

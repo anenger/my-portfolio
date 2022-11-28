@@ -1,3 +1,5 @@
+@import "./global.css";
+
 .title-div {
   display: flex;
   flex-direction: row;
@@ -23,21 +25,21 @@
 }
 
 .title-sub-heading {
-  color: #ef946c;
-  font-size: 32px;
+  color: var(--title-text-color);
+  font-size: var(--title-text-size);
   font-weight: 700;
   font-family: "Asap";
 }
 
 .title-description {
-  color: #cad2c5;
+  color: var(--subtitle-text-color);
+  font-size: var(--subtitle-text-size);
   font-family: "Spinnaker";
   max-width: 500px;
-  font-size: 16px;
 }
 
 .title-description > a {
-  color: #cad2c5;
+  color: var(--subtitle-text-color);
 }
 
 .title-image {
