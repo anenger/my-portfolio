@@ -3,6 +3,7 @@ body {
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  display: flex;
 }
 
 @keyframes fadeInAnimation {
@@ -15,21 +16,20 @@ body {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  max-width: 80%;
-  font-family: sans-serif;
+  max-width: 70%;
   margin: 0 auto;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  padding-left: 1rem;
+  padding-inline-start: 0rem;
 }
+
 .nav-link-item {
-  padding-right: 2rem;
+  padding-right: 1rem;
 }
+
 .nav-link-text {
   color: #cad2c5;
   font-size: 20px;

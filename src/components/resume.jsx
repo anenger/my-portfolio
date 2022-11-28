@@ -1,15 +1,24 @@
 import * as React from "react";
 
+import {
+  resumeDiv,
+  resumeHeader,
+  resumeJobList,
+  resumeJobItem,
+  resumeJobText,
+  resumeJobDescription,
+} from "./resume.module.css";
+
 const Resume = ({ jobs, descriptions }) => {
   return (
-    <div>
-      <h1>Where I've Worked</h1>
-      <ul>
+    <div className={resumeDiv}>
+      <div className={resumeHeader}>Where I've Worked</div>
+      <ul className={resumeJobList}>
         {jobs.map((job, index) => {
           return (
-            <li key={index}>
-              <h3>{job}</h3>
-              <p>{descriptions[index]}</p>
+            <li className={resumeJobItem} key={index}>
+              <div className={resumeJobText}>{job}</div>
+              <div className={resumeJobDescription}>{descriptions[index]}</div>
             </li>
           );
         })}

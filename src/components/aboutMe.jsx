@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import {
-  aboutMeContainer,
+  aboutMeDiv,
   aboutMeText,
   aboutMeTitle,
   aboutMeDescription,
@@ -9,9 +9,9 @@ import {
 
 const AboutMe = ({ title, description }) => {
   return (
-    <div className={aboutMeContainer}>
+    <div className={aboutMeDiv}>
       <div className={aboutMeText}>
-        <h1 className={aboutMeTitle}>{title}</h1>
+        <div className={aboutMeTitle}>{title}</div>
         <p className={aboutMeDescription}>{description}</p>
       </div>
     </div>

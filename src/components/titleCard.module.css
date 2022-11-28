@@ -1,8 +1,7 @@
 .title-div {
   display: flex;
   flex-direction: row;
-  padding-left: 1rem;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .title-text {
@@ -43,6 +42,8 @@
 
 .title-image {
   max-width: 500px;
+  display: flex;
+  justify-content: center;
   align-content: center;
   padding: 1rem;
   background: transparent;
