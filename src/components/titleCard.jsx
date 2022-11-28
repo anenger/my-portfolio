@@ -1,11 +1,23 @@
 import * as React from "react";
 
-const TitleCard = ({ title, subtitle, description }) => {
+import {
+  titleDiv,
+  titleText,
+  titleHeading,
+  titleSubHeading,
+  titleDescription,
+  titleImage,
+} from "./titleCard.module.css";
+
+const TitleCard = ({ title, subtitle, description, image }) => {
   return (
-    <div>
-      <h1>{title}</h1>
-      <h2>{subtitle}</h2>
-      <p>{description}</p>
+    <div className={titleDiv}>
+      <div className={titleText}>
+        <div className={titleHeading}>{title}</div>
+        <div className={titleSubHeading}>{subtitle}</div>
+        <p className={titleDescription}>{description}</p>
+      </div>
+      <div className={titleImage}>{image}</div>
     </div>
   );
 };

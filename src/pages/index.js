@@ -21,17 +21,17 @@ const IndexPage = () => {
             <a href="https://loop.microsoft.com/learn">Microsoft Loop</a> team.
           </>
         }
+        image={
+          <StaticImage
+            src="../images/headshot.jpg"
+            alt="Picture of me!"
+          ></StaticImage>
+        }
       ></TitleCard>
       <AboutMe
         title="About Me"
         description={
           <>
-            <p>
-              I'm the worlds biggest cutie pie, but thats not as important as
-              knowing that I truly don't like coding that much. I would rather
-              buy and sell sneakers and collect trinkets and empty boxes on my
-              shelves. You guys should try being me, I am so awesome.
-            </p>
             <p>
               My journey into programming started at a young age, through making
               custom maps for Minecraft and Roblox as well as attempting to make
@@ -47,12 +47,6 @@ const IndexPage = () => {
               23.
             </p>
           </>
-        }
-        image={
-          <StaticImage
-            src="../images/headshot.jpg"
-            alt="Picture of me!"
-          ></StaticImage>
         }
       ></AboutMe>
       <Resume

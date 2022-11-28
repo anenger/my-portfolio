@@ -1,0 +1,24 @@
+.about-me-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  padding-left: 1rem;
+}
+
+.about-me-text {
+  max-width: 80%;
+}
+
+.about-me-title {
+  color: #ef946c;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: "Asap";
+}
+
+.about-me-description {
+  font-family: "Spinnaker";
+  color: #cad2c5;
+  font-size: 16px;
+}

@@ -1,0 +1,48 @@
+.title-div {
+  display: flex;
+  flex-direction: row;
+  padding-left: 1rem;
+}
+
+.title-text {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.title-heading {
+  font-size: 48px;
+  font-family: "Exo";
+  font-style: italic;
+  font-weight: bold;
+  text-shadow: 2px 0 #84a98c;
+  letter-spacing: 1.5px;
+  color: #84a98c;
+  padding-bottom: 0.5rem;
+}
+
+.title-sub-heading {
+  color: #ef946c;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: "Asap";
+}
+
+.title-description {
+  color: #cad2c5;
+  font-family: "Spinnaker";
+  max-width: 500px;
+  font-size: 16px;
+}
+
+.title-description > a {
+  color: #cad2c5;
+}
+
+.title-image {
+  max-width: 500px;
+  align-content: center;
+  padding: 1rem;
+  background: transparent;
+}

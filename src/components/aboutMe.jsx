@@ -1,11 +1,19 @@
 import * as React from "react";
 
-const AboutMe = ({ title, description, image }) => {
+import {
+  aboutMeContainer,
+  aboutMeText,
+  aboutMeTitle,
+  aboutMeDescription,
+} from "./aboutMe.module.css";
+
+const AboutMe = ({ title, description }) => {
   return (
-    <div>
-      <h1>{title}</h1>
-      <p>{description}</p>
-      {image}
+    <div className={aboutMeContainer}>
+      <div className={aboutMeText}>
+        <h1 className={aboutMeTitle}>{title}</h1>
+        <p className={aboutMeDescription}>{description}</p>
+      </div>
     </div>
   );
 };
