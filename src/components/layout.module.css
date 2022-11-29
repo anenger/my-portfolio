@@ -22,6 +22,12 @@ body {
   max-width: 70%;
 }
 
+@media (max-width: 1000px) {
+  .container {
+    max-width: 95%;
+  }
+}
+
 .nav-links {
   display: flex;
   list-style: none;
