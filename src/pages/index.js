@@ -141,6 +141,6 @@ const IndexPage = () => {
   );
 };
 
-export const Head = () => <title>Home Page</title>;
+export const Head = () => <title>Andrew Enger</title>;
 
 export default IndexPage;
