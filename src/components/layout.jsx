@@ -1,11 +1,8 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import {
-  container,
-  navLinks,
-  navLinkItem,
-  navLinkText,
-} from "./layout.module.css";
+import { navLinks, navLinkItem, navLinkText } from "./layout.module.css";
+
+import { container } from "./global.module.css";
 
 const Layout = ({ children }) => {
   return (

@@ -1,32 +1,4 @@
-@import "./global.css";
-
-body {
-  background-color: #2f3e46;
-  animation: fadeInAnimation ease 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  display: flex;
-}
-
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 70%;
-}
-
-@media (max-width: 1000px) {
-  .container {
-    max-width: 95%;
-  }
-}
+@import "./global.module.css";
 
 .nav-links {
   display: flex;

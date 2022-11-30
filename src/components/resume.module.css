@@ -1,4 +1,4 @@
-@import "./global.css";
+@import "./global.module.css";
 
 .resume-div {
   display: flex;
@@ -20,10 +20,28 @@
 }
 
 .resume-job-item {
+  font-family: "Spinnaker";
 }
 
 .resume-job-text {
+  font-family: "Spinnaker";
 }
 
-.resume-job-description {
+.resume-job-text > a {
+  text-decoration: none;
+  color: var(--title-text-color);
+}
+
+.resume-job-flexbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.resume-job-description-list {
+  font-family: "Spinnaker";
+}
+
+.resume-job-description-item {
+  font-family: "Spinnaker";
 }

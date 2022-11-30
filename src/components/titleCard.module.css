@@ -1,4 +1,4 @@
-@import "./global.css";
+@import "./global.module.css";
 
 .title-div {
   display: flex;
@@ -45,7 +45,8 @@
 }
 
 .title-description > a {
-  color: var(--subtitle-text-color);
+  color: var(--title-text-color);
+  text-decoration: none;
 }
 
 .title-image {

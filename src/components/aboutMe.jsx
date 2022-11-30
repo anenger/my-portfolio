@@ -9,10 +9,10 @@ import {
 
 const AboutMe = ({ title, description }) => {
   return (
-    <div className={aboutMeDiv}>
+    <div className={aboutMeDiv} id={"about"}>
       <div className={aboutMeText}>
         <div className={aboutMeTitle}>{title}</div>
-        <p className={aboutMeDescription}>{description}</p>
+        <div className={aboutMeDescription}>{description}</div>
       </div>
     </div>
   );

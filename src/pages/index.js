@@ -5,7 +5,8 @@ import AboutMe from "../components/aboutMe";
 import Layout from "../components/layout";
 import TitleCard from "../components/titleCard";
 import Resume from "../components/resume";
-import Gallery from "../components/gallery";
+
+import { hoverUnderlineAnimation } from "../components/global.module.css";
 
 const IndexPage = () => {
   return (
@@ -18,7 +19,15 @@ const IndexPage = () => {
             I enjoy creating interactive experiences on the web. Currently, I
             work at Microsoft using technologies such as React, Node,
             Typescript, and Azure on the{" "}
-            <a href="https://loop.microsoft.com/learn">Microsoft Loop</a> team.
+            <a
+              href="https://loop.microsoft.com/learn"
+              target="_blank"
+              rel="noreferrer"
+              className={hoverUnderlineAnimation}
+            >
+              Microsoft Loop
+            </a>{" "}
+            team.
           </>
         }
         image={
@@ -50,10 +59,84 @@ const IndexPage = () => {
         }
       ></AboutMe>
       <Resume
-        jobs={["Microsoft", "Wellframe", "TripAdvisor", "Stadium Goods"]}
-        descriptions={["Loop", "Things", "Are", "Cool Goods"]}
+        jobs={[
+          [
+            <>
+              Software Engineer @{" "}
+              <a
+                href="https://microsoft.com"
+                target="_blank"
+                rel="noreferrer"
+                className={hoverUnderlineAnimation}
+              >
+                Microsoft
+              </a>
+            </>,
+            "Aug 2022 - Present",
+          ],
+          [
+            <>
+              Software Engineering QA Co-op @{" "}
+              <a
+                href="https://wellframe.com"
+                target="_blank"
+                rel="noreferrer"
+                className={hoverUnderlineAnimation}
+              >
+                Wellframe
+              </a>
+            </>,
+            "Feb 2021 - Jun 2021",
+          ],
+          [
+            <>
+              CorpIT Engineer Co-op @{" "}
+              <a
+                href="https://tripadvisor.com"
+                target="_blank"
+                rel="noreferrer"
+                className={hoverUnderlineAnimation}
+              >
+                TripAdvisor
+              </a>
+            </>,
+            "Jan 2020 - Jun 2020",
+          ],
+          [
+            <>
+              IT Intern @{" "}
+              <a
+                href="https://stadiumgoods.com"
+                target="_blank"
+                rel="noreferrer"
+                className={hoverUnderlineAnimation}
+              >
+                Stadium Goods
+              </a>
+            </>,
+            "Jun 2019 - Aug 2019",
+          ],
+        ]}
+        descriptions={[
+          [
+            "Used React.js and Fluent UI to build functional components",
+            "Updated styles to meet accessibility requirements",
+          ],
+          [
+            "Built and refactored test suites for the application using Selenium Webdriver for Java.",
+            "Built custom mock data loader using Python, MySQL, and Gitlab CI/CD for testing.",
+            "Learned HIPAA compliance in technology.",
+          ],
+          [
+            "Used HyperV, VMWare, Nutanix, Microsoft Exchange, Microsoft Active Directory, Powershell, and Bash to automate core IT functionality",
+            "Created email purge scripts, tested VM infrastructure, installed VoIP systems, deployed various certificates",
+          ],
+          [
+            "Learned Microsoft Intune and Microsoft Azure to roll out Device Management system for Mac, iOS and ChromeOS devices",
+            "Set up wireless access points and servers using Ubiquiti and Cisco equipment",
+          ],
+        ]}
       ></Resume>
-      <Gallery title="Other work" images={["../images/headshot.jpg"]}></Gallery>
     </Layout>
   );
 };

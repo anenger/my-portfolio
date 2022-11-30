@@ -1,4 +1,4 @@
-@import "./global.css";
+@import "./global.module.css";
 
 .about-me-div {
   display: flex;
