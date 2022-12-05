@@ -1,0 +1,26 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+.heading {
+  font-size: 48px;
+  font-family: "Exo";
+  font-style: italic;
+  font-weight: bold;
+  text-shadow: 2px 0 #84a98c;
+  letter-spacing: 1.5px;
+  color: #84a98c;
+  padding-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.paragraph {
+  font-family: "Spinnaker";
+  color: var(--subtitle-text-color);
+  font-size: var(--subtitle-text-size);
+}
