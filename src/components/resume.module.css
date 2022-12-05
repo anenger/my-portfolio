@@ -23,15 +23,6 @@
   font-family: "Spinnaker";
 }
 
-.resume-job-text {
-  font-family: "Spinnaker";
-}
-
-.resume-job-text > a {
-  text-decoration: none;
-  color: var(--title-text-color);
-}
-
 .resume-job-flexbox {
   display: flex;
   flex-direction: row;

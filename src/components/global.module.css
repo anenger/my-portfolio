@@ -40,7 +40,8 @@ html {
 .hover-underline-animation {
   display: inline-block;
   position: relative;
-  color: #0087ca;
+  color: var(--title-text-color);
+  text-decoration: none;
 }
 
 .hover-underline-animation::after {

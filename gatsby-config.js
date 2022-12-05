@@ -3,12 +3,32 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `My Portfolio`,
+    title: `Andrew Enger`,
     siteUrl: `https://www.anenger.com`,
+    description: `Andrew Enger is a Software Engineer at Microsoft. He enjoys creating interactive experiences on the web.`,
   },
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/images/favicon.png",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `jobs`,
+        path: `${__dirname}/src/content/jobs`,
+      },
+    },
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [{ resolve: "gatsby-remark-external-links" }],
+      },
+    },
     {
       /* Include plugin */
       resolve: "gatsby-omni-font-loader",

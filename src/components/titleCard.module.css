@@ -9,6 +9,7 @@
 @media (max-width: 1000px) {
   .title-div {
     flex-direction: column;
+    justify-content: space-evenly;
   }
 }
 
