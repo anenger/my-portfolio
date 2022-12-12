@@ -11,17 +11,10 @@
 .nav-links {
   display: flex;
   list-style: none;
-  padding-inline-start: 5rem;
-}
-
-@media (max-width: 1000px) {
-  .nav-links {
-    padding-inline-start: 2rem;
-  }
 }
 
 .nav-link-item {
-  padding-right: 1rem;
+  padding-inline-end: 1rem;
 }
 
 .nav-link-text {

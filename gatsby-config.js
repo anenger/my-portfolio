@@ -47,6 +47,8 @@ module.exports = {
       options: {
         /* Font loading mode */
         mode: "async",
+        /* Font scope `body` or `html` */
+        scope: "html",
         /* Enable font loading listener to handle FOUT */
         enableListener: true,
         /* Preconnect URL-s. This example is for Google Fonts */
@@ -57,19 +59,19 @@ module.exports = {
             /* Exact name of the font as defied in @font-face CSS rule */
             name: "Exo",
             /* URL to the font CSS file with @font-face definition */
-            file: "https://fonts.googleapis.com/css2?family=Exo:wght@400;600;700&display=swap",
+            file: "https://fonts.googleapis.com/css2?family=Exo&display=swap",
           },
           {
             /* Exact name of the font as defied in @font-face CSS rule */
             name: "Asap",
             /* URL to the font CSS file with @font-face definition */
-            file: "https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&display=swap",
+            file: "https://fonts.googleapis.com/css2?family=Asap&display=swap",
           },
           {
             /* Exact name of the font as defied in @font-face CSS rule */
             name: "Spinnaker",
             /* URL to the font CSS file with @font-face definition */
-            file: "https://fonts.googleapis.com/css2?family=Spinnaker:wght@400;600;700&display=swap",
+            file: "https://fonts.googleapis.com/css2?family=Spinnaker&display=swap",
           },
         ],
       },
