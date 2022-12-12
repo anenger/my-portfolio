@@ -12,7 +12,8 @@
 }
 
 .resume-job-title {
-  color: var(--title-text-color);
+  color: var(--subtitle-text-color);
+  font-family: "Spinnaker";
 }
 
 .resume-job-description-item {
