@@ -1,19 +1,32 @@
 import * as React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 
 import {
   aboutMeDiv,
-  aboutMeText,
   aboutMeTitle,
   aboutMeDescription,
 } from "./aboutMe.module.css";
 
-const AboutMe = ({ title, description }) => {
+const AboutMe = ({ title }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      aboutMe: markdownRemark(
+        fileAbsolutePath: { regex: "/content/static/aboutMe/" }
+      ) {
+        html
+      }
+    }
+  `);
+
+  const html = data.aboutMe.html;
+
   return (
     <div className={aboutMeDiv} id={"about"}>
-      <div className={aboutMeText}>
-        <div className={aboutMeTitle}>{title}</div>
-        <div className={aboutMeDescription}>{description}</div>
-      </div>
+      <h2 className={aboutMeTitle}>{title}</h2>
+      <div
+        className={aboutMeDescription}
+        dangerouslySetInnerHTML={{ __html: html }}
+      ></div>
     </div>
   );
 };

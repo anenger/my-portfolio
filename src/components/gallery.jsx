@@ -1,20 +1,47 @@
 import * as React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 
-const Gallery = ({ title, images }) => {
+import {
+  galleryDiv,
+  galleryHeading,
+  galleryImageDiv,
+  galleryImages,
+  galleryImage,
+} from "./gallery.module.css";
+
+const Gallery = ({ title }) => {
+  const data = useStaticQuery(graphql`
+    {
+      allFile(
+        filter: {
+          extension: { eq: "jpg" }
+          relativeDirectory: { eq: "gallery" }
+        }
+      ) {
+        edges {
+          node {
+            publicURL
+          }
+        }
+      }
+    }
+  `);
   return (
-    <div>
-      <h1>{title}</h1>
-      <ul>
-        {images.map((image, index) => {
+    <div className={galleryDiv}>
+      <h2 className={galleryHeading}>{title}</h2>
+      <div className={galleryImages}>
+        {data.allFile.edges.map((image, index) => {
           return (
-            <img
-              src={image}
-              alt={index}
-              style={{ height: "100px", width: "100px" }}
-            ></img>
+            <div className={galleryImageDiv}>
+              <img
+                className={galleryImage}
+                src={image.node.publicURL}
+                alt={index}
+              ></img>
+            </div>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 };

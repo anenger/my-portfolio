@@ -6,10 +6,13 @@ import {
   titleHeading,
   titleSubHeading,
   titleDescription,
+  titleImageDiv,
   titleImage,
 } from "./titleCard.module.css";
 
-const TitleCard = ({ title, subtitle, description, image }) => {
+import headshot from "../images/headshot.jpg";
+
+const TitleCard = ({ title, subtitle, description }) => {
   return (
     <div className={titleDiv}>
       <div className={titleText}>
@@ -17,7 +20,9 @@ const TitleCard = ({ title, subtitle, description, image }) => {
         <div className={titleSubHeading}>{subtitle}</div>
         <p className={titleDescription}>{description}</p>
       </div>
-      <div className={titleImage}>{image}</div>
+      <div className={titleImageDiv}>
+        <img className={titleImage} src={headshot} alt={"My face!"}></img>
+      </div>
     </div>
   );
 };

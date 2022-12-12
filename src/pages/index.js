@@ -1,5 +1,4 @@
 import * as React from "react";
-import { StaticImage } from "gatsby-plugin-image";
 
 import AboutMe from "../components/aboutMe";
 import Layout from "../components/layout";
@@ -7,6 +6,7 @@ import TitleCard from "../components/titleCard";
 import Resume from "../components/resume";
 
 import { hoverUnderlineAnimation } from "../components/global.module.css";
+import Gallery from "../components/gallery";
 
 const IndexPage = () => {
   return (
@@ -30,35 +30,10 @@ const IndexPage = () => {
             team.
           </>
         }
-        image={
-          <StaticImage
-            src="../images/headshot.jpg"
-            alt="Picture of me!"
-          ></StaticImage>
-        }
       ></TitleCard>
-      <AboutMe
-        title="About Me"
-        description={
-          <>
-            <p>
-              My journey into programming started at a young age, through making
-              custom maps for Minecraft and Roblox as well as attempting to make
-              my own mods. I was always interested in how computers worked, so
-              in high school I decided to take a CS course, and I've been coding
-              ever since.
-            </p>
-            <p>
-              Over the years, I've had the pleasure of working at a digital
-              health startup, a travel aggregator, and a luxury consignment
-              company. Outside of work, you can probably find me researching the
-              latest in espresso making, working out, skiing, or playing FIFA
-              23.
-            </p>
-          </>
-        }
-      ></AboutMe>
+      <AboutMe title="About Me"></AboutMe>
       <Resume></Resume>
+      <Gallery title="Pictures I've Taken"></Gallery>
     </Layout>
   );
 };

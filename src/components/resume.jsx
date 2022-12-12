@@ -8,7 +8,7 @@ const Resume = () => {
   const data = useStaticQuery(graphql`
     query {
       jobs: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/jobs/" } }
+        filter: { fileAbsolutePath: { regex: "/content/static/jobs/" } }
         sort: { frontmatter: { date: DESC } }
       ) {
         edges {

@@ -15,13 +15,13 @@
   font-size: var(--subtitle-text-size);
   font-family: "Spinnaker";
   text-decoration: none;
-  box-shadow: inset 0 0 0 0 #54b3d6;
+  box-shadow: inset 0 0 0 0 var(--hover-text-color);
   margin: 0 -0.25rem;
   padding: 0 0.25rem;
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .nav-link-text:hover {
-  box-shadow: inset 100px 0 0 0 #54b3d6;
+  box-shadow: inset 100px 0 0 0 var(--hover-text-color);
   color: white;
 }
