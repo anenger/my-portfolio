@@ -27,7 +27,7 @@
 .nav-link-text {
   color: var(--subtitle-text-color);
   font-size: var(--subtitle-text-size);
-  font-family: "Spinnaker";
+  font-family: var(--subtitle-font-family);
   text-decoration: none;
   box-shadow: inset 0 0 0 0 var(--hover-text-color);
   margin: 0 -0.25rem;

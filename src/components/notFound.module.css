@@ -9,7 +9,7 @@
 .heading {
   font-size: var(--big-text-size);
   color: var(--big-text-color);
-  font-family: "Exo";
+  font-family: var(--big-font-family);
   font-style: italic;
   font-weight: bold;
   text-shadow: 2px 0 #84a98c;
@@ -20,7 +20,7 @@
 }
 
 .paragraph {
-  font-family: "Spinnaker";
+  font-family: var(--subtitle-font-family);
   color: var(--subtitle-text-color);
   font-size: var(--subtitle-text-size);
 }

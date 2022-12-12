@@ -23,7 +23,7 @@
 
 .title-heading {
   font-size: 48px;
-  font-family: "Exo";
+  font-family: var(--big-font-family);
   font-style: italic;
   font-weight: bold;
   text-shadow: 2px 0 #84a98c;
@@ -36,13 +36,13 @@
   color: var(--title-text-color);
   font-size: var(--title-text-size);
   font-weight: 700;
-  font-family: "Asap";
+  font-family: var(--title-font-family);
 }
 
 .title-description {
   color: var(--subtitle-text-color);
   font-size: var(--subtitle-text-size);
-  font-family: "Spinnaker";
+  font-family: var(--subtitle-font-family);
   max-width: 500px;
 }
 

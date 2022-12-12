@@ -7,6 +7,9 @@
   --subtitle-text-size: 20px;
   --hover-text-color: #54b3d6;
   --underline-text-color: #0087ca;
+  --title-font-family: "Asap, Arial, sans-serif";
+  --subtitle-font-family: "Spinnaker, Arial, sans-serif";
+  --big-font-family: "Exo, Arial, sans-serif";
 }
 
 body {

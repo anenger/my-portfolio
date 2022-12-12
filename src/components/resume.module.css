@@ -11,12 +11,12 @@
   color: var(--title-text-color);
   font-size: var(--title-text-size);
   font-weight: 700;
-  font-family: "Asap";
+  font-family: var(--title-font-family);
   text-shadow: 2px 1px 2px black;
 }
 
 .resume-job-list {
-  font-family: "Spinnaker";
+  font-family: var(--subtitle-font-family);
   color: var(--subtitle-text-color);
   font-size: var(--subtitle-text-size);
 }

@@ -1,7 +1,7 @@
 @import "./global.module.css";
 
 .resume-job-item {
-  font-family: "Spinnaker";
+  font-family: var(--subtitle-font-family);
 }
 
 .resume-job-flexbox {
@@ -13,9 +13,9 @@
 
 .resume-job-title {
   color: var(--subtitle-text-color);
-  font-family: "Spinnaker";
+  font-family: var(--subtitle-font-family);
 }
 
 .resume-job-description-item {
-  font-family: "Spinnaker";
+  font-family: var(--subtitle-font-family);
 }
