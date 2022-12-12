@@ -1,4 +1,5 @@
 node_modules/
 .cache/
 public
+package_lock.json
 */**/.DS_Store
