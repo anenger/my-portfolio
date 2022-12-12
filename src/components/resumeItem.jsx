@@ -22,6 +22,7 @@ const ResumeItem = ({ index, title, url, company, range, html }) => {
         <span className={resumeJobTitle}>{range}</span>
       </div>
       <div
+        index={index}
         className={resumeJobDescriptionItem}
         dangerouslySetInnerHTML={{ __html: html }}
       ></div>
