@@ -6,6 +6,8 @@ module.exports = {
     title: `Andrew Enger`,
     siteUrl: `https://www.anenger.com`,
     description: `Andrew Enger is a Software Engineer at Microsoft. He enjoys creating interactive experiences on the web.`,
+    twitterUsername: `@securecop`,
+    image: `/icon.png`,
   },
   plugins: [
     `gatsby-plugin-image`,

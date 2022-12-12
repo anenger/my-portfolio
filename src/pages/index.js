@@ -4,9 +4,10 @@ import AboutMe from "../components/aboutMe";
 import Layout from "../components/layout";
 import TitleCard from "../components/titleCard";
 import Resume from "../components/resume";
+import Gallery from "../components/gallery";
+import SeoItem from "../components/seo";
 
 import { hoverUnderlineAnimation } from "../components/global.module.css";
-import Gallery from "../components/gallery";
 
 const IndexPage = () => {
   return (
@@ -38,6 +39,6 @@ const IndexPage = () => {
   );
 };
 
-export const Head = () => <title>Andrew Enger</title>;
+export const Head = () => <SeoItem />;
 
 export default IndexPage;
