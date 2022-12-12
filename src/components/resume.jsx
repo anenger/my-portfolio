@@ -1,16 +1,8 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import ResumeItem from "./resumeItem";
 
-import {
-  resumeDiv,
-  resumeHeader,
-  resumeJobList,
-  resumeJobItem,
-  resumeJobFlexbox,
-  resumeJobDescriptionList,
-} from "./resume.module.css";
-
-import { hoverUnderlineAnimation } from "../components/global.module.css";
+import { resumeDiv, resumeHeader, resumeJobList } from "./resume.module.css";
 
 const Resume = () => {
   const data = useStaticQuery(graphql`
@@ -47,21 +39,14 @@ const Resume = () => {
             const { title, url, company, range } = frontmatter;
 
             return (
-              <div className={resumeJobItem} key={index}>
-                <div className={resumeJobFlexbox}>
-                  <span>
-                    {`${title} @ `}
-                    <a href={url} className={hoverUnderlineAnimation}>
-                      {company}
-                    </a>
-                  </span>
-                  <span>{range}</span>
-                </div>
-                <ul
-                  className={resumeJobDescriptionList}
-                  dangerouslySetInnerHTML={{ __html: html }}
-                ></ul>
-              </div>
+              <ResumeItem
+                index={index}
+                title={title}
+                url={url}
+                company={company}
+                range={range}
+                html={html}
+              ></ResumeItem>
             );
           })}
       </div>

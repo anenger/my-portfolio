@@ -1,0 +1,20 @@
+@import "./global.module.css";
+
+.resume-job-item {
+  font-family: "Spinnaker";
+}
+
+.resume-job-flexbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 4px;
+}
+
+.resume-job-title {
+  color: var(--title-text-color);
+}
+
+.resume-job-description-item {
+  font-family: "Spinnaker";
+}

@@ -18,21 +18,3 @@
   color: var(--subtitle-text-color);
   font-size: var(--subtitle-text-size);
 }
-
-.resume-job-item {
-  font-family: "Spinnaker";
-}
-
-.resume-job-flexbox {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.resume-job-description-list {
-  font-family: "Spinnaker";
-}
-
-.resume-job-description-item {
-  font-family: "Spinnaker";
-}

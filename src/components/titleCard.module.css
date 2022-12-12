@@ -52,6 +52,7 @@
 
 .title-image {
   max-width: 500px;
+  max-height: 500px;
   display: flex;
   justify-content: center;
   align-content: center;
