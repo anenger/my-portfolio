@@ -4,7 +4,6 @@ import AboutMe from "../components/aboutMe";
 import Layout from "../components/layout";
 import TitleCard from "../components/titleCard";
 import Resume from "../components/resume";
-import Gallery from "../components/gallery";
 import SeoItem from "../components/seo";
 
 import { hoverUnderlineAnimation } from "../components/global.module.css";
@@ -34,7 +33,6 @@ const IndexPage = () => {
       ></TitleCard>
       <AboutMe title="About Me"></AboutMe>
       <Resume></Resume>
-      <Gallery title="Pictures I've Taken"></Gallery>
     </Layout>
   );
 };
