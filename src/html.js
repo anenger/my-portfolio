@@ -9,8 +9,9 @@ export default function HTML(props) {
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta
           name="viewport"
-          content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+          content="user-scalable=no, width=device-width, initial-scale=1.0"
         />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

@@ -47,8 +47,6 @@ module.exports = {
       options: {
         /* Font loading mode */
         mode: "async",
-        /* Font scope `body` or `html` */
-        scope: "html",
         /* Enable font loading listener to handle FOUT */
         enableListener: true,
         /* Preconnect URL-s. This example is for Google Fonts */
