@@ -57,9 +57,6 @@
   align-content: center;
   padding: 1rem;
   background: transparent;
-  animation: fadeInAnimation ease 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
 }
 
 .title-image {
