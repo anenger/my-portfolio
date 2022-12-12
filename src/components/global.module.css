@@ -11,9 +11,6 @@
 
 body {
   background-color: #2f3e46;
-  animation: fadeInAnimation ease 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
   display: flex;
   margin: 0;
 }
