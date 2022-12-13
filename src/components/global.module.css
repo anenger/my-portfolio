@@ -15,6 +15,7 @@
 html {
   scroll-behavior: smooth;
   height: auto;
+  min-height: 100vh;
 }
 
 body {
@@ -22,7 +23,6 @@ body {
   margin: 0;
   overflow-x: hidden;
   width: auto;
-  height: auto;
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -48,10 +48,14 @@ body {
   }
 }
 
+a:focus-visible {
+  outline: 2px solid white;
+  border-radius: 4px;
+}
+
 .hover-underline-animation {
   display: inline-block;
   position: relative;
-  color: var(--title-text-color);
   text-decoration: none;
 }
 
