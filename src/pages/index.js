@@ -34,7 +34,7 @@ const IndexPage = () => {
       ></TitleCard>
       <AboutMe title="About Me"></AboutMe>
       <Resume></Resume>
-      <Gallery title="Pictures I've Taken"></Gallery>
+      <Gallery title="Photos"></Gallery>
     </Layout>
   );
 };
