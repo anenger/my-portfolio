@@ -1,0 +1,27 @@
+.icons-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+}
+
+.icon-style {
+  font-size: 5rem;
+  color: var(--subtitle-text-color);
+  background-color: transparent;
+  font-family: var(--subtitle-font-family);
+  transition: all 0.2s ease-in-out;
+  border: none;
+  outline: none;
+}
+
+.icon-style:hover {
+  color: var(--title-text-color);
+  transform: scale(1.2);
+}
+
+.icon-style:focus-visible {
+  color: var(--title-text-color);
+  transform: scale(1.2);
+}

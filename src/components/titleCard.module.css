@@ -1,5 +1,3 @@
-@import "./global.module.css";
-
 .title-div {
   display: flex;
   flex-direction: row;
@@ -19,6 +17,7 @@
   flex-direction: column;
   align-content: center;
   justify-content: center;
+  max-width: 50em;
 }
 
 .title-heading {
@@ -37,13 +36,13 @@
   font-size: var(--title-text-size);
   font-weight: 700;
   font-family: var(--title-font-family);
+  text-shadow: 2px 1px 2px black;
 }
 
 .title-description {
   color: var(--subtitle-text-color);
   font-size: var(--subtitle-text-size);
   font-family: var(--subtitle-font-family);
-  max-width: 500px;
 }
 
 .title-description > a {

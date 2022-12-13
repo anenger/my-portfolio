@@ -1,5 +1,3 @@
-@import "./global.module.css";
-
 .resume-job-item {
   font-family: var(--subtitle-font-family);
 }

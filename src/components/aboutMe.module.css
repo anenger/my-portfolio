@@ -1,5 +1,3 @@
-@import "./global.module.css";
-
 .about-me-div {
   display: flex;
   flex-direction: column;
@@ -19,4 +17,8 @@
   font-family: var(--subtitle-font-family);
   color: var(--subtitle-text-color);
   font-size: var(--subtitle-text-size);
+}
+
+.about-me-description > p {
+  margin-top: 0;
 }

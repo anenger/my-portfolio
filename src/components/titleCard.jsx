@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import Icons from "./icons";
 
 import {
   titleDiv,
@@ -33,6 +34,7 @@ const TitleCard = ({ title, subtitle, description }) => {
         <div className={titleHeading}>{title}</div>
         <div className={titleSubHeading}>{subtitle}</div>
         <p className={titleDescription}>{description}</p>
+        <Icons />
       </div>
       <div className={titleImageDiv}>
         <GatsbyImage

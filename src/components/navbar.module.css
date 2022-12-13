@@ -1,5 +1,3 @@
-@import "./global.module.css";
-
 .nav-box {
   background-color: #46372f;
   padding: 0.5rem 0;
@@ -11,10 +9,11 @@
 .nav-links {
   display: flex;
   list-style: none;
+  padding-inline-start: 1em;
 }
 
 .nav-link-item {
-  padding-inline-end: 1rem;
+  padding-inline-end: 0.75em;
 }
 
 .nav-link-text {

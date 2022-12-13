@@ -21,7 +21,7 @@ const AboutMe = ({ title }) => {
   const html = data.aboutMe.html;
 
   return (
-    <div className={aboutMeDiv} id={"about"}>
+    <div className={aboutMeDiv} id="about">
       <h2 className={aboutMeTitle}>{title}</h2>
       <div
         className={aboutMeDescription}
