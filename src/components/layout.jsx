@@ -1,13 +1,13 @@
 import * as React from "react";
 
 import Navbar from "./navbar";
-import { container } from "./global.module.css";
+import { parentContainer, childrenContainer } from "./layout.module.css";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className={parentContainer}>
       <Navbar />
-      <main className={container}>{children}</main>
+      <main className={childrenContainer}>{children}</main>
     </div>
   );
 };

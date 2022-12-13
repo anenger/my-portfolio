@@ -12,15 +12,25 @@
   --big-font-family: "Exo", Arial, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+  height: auto;
+}
+
 body {
-  background-color: #2f3e46;
   display: flex;
   margin: 0;
   overflow-x: hidden;
   width: auto;
+  height: auto;
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  overscroll-behavior: none;
+  background-image: linear-gradient(
+    rgba(47, 62, 70, 1) 0%,
+    rgba(239, 148, 108, 1) 100%
+  );
 }
 
 @keyframes fadeInAnimation {
@@ -32,23 +42,9 @@ body {
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-}
-
-.container {
-  margin: 0 5em;
-}
-
-@media (max-width: 1000px) and (min-width: 300px) {
-  .container {
-    margin: 0 auto;
   }
 }
 

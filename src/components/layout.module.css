@@ -1,0 +1,14 @@
+.parent-container {
+  display: inline-block;
+}
+
+.children-container {
+  margin: 0 5em;
+  display: inline-block;
+}
+
+@media (max-width: 1000px) and (min-width: 300px) {
+  .children-container {
+    margin: 0 auto;
+  }
+}
