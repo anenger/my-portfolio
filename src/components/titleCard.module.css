@@ -21,12 +21,13 @@
 }
 
 .title-heading {
+  /* Font styling */
   font-size: 48px;
   font-family: var(--big-font-family);
   font-style: italic;
   font-weight: bold;
   text-shadow: 2px 0 #84a98c;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.05em;
   color: #84a98c;
   padding-bottom: 0.5rem;
 }
@@ -64,5 +65,5 @@
 .title-image {
   max-width: 30rem;
   object-fit: cover;
-  filter: drop-shadow(30px 10px 4px var(--title-text-color));
+  filter: drop-shadow(20px 20px 4px var(--title-text-color));
 }
