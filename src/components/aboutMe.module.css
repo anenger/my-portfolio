@@ -17,6 +17,7 @@
   font-family: var(--subtitle-font-family);
   color: var(--subtitle-text-color);
   font-size: var(--subtitle-text-size);
+  padding: 1rem;
 }
 
 .about-me-description > p {

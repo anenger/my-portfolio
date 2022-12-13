@@ -25,7 +25,7 @@ const Gallery = ({ title }) => {
           node {
             name
             childImageSharp {
-              gatsbyImageData(width: 500, quality: 90, placeholder: BLURRED)
+              gatsbyImageData(width: 650, aspectRatio: 1.25, quality: 75)
             }
           }
         }
