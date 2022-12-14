@@ -19,7 +19,7 @@ const TitleCard = ({ title, subtitle, description }) => {
       file(relativePath: { eq: "headshot.jpg" }) {
         name
         childImageSharp {
-          gatsbyImageData(width: 1000, quality: 90, placeholder: BLURRED)
+          gatsbyImageData(width: 800, quality: 75)
         }
       }
     }
