@@ -11,6 +11,8 @@ const Footer = () => {
         <a
           href="https://github.com/anenger/my-portfolio"
           className={`${footerLink} ${hoverUnderlineAnimation}`}
+          target="_blank"
+          rel="nofollow noopener noreferrer"
         >
           This site was built with Gatsby.js
         </a>

@@ -13,13 +13,28 @@ const Icons = () => {
   };
   return (
     <div className={iconsDiv}>
-      <a className={iconStyle} href={links["github"]}>
+      <a
+        className={iconStyle}
+        href={links["github"]}
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+      >
         <VscGithub />
       </a>
-      <a className={iconStyle} href={links["linkedin"]}>
+      <a
+        className={iconStyle}
+        href={links["linkedin"]}
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+      >
         <AiOutlineLinkedin />
       </a>
-      <a className={iconStyle} href={links["email"]}>
+      <a
+        className={iconStyle}
+        href={links["email"]}
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+      >
         <AiOutlineMail />
       </a>
     </div>
