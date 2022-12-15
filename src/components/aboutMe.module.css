@@ -8,15 +8,16 @@
 .about-me-title {
   color: var(--title-text-color);
   font-size: var(--title-text-size);
-  font-weight: 700;
-  font-family: var(--title-font-family);
+  font-weight: var(--title-text-weight);
+  font-family: var(--font-family);
   text-shadow: 2px 1px 2px black;
 }
 
 .about-me-description {
-  font-family: var(--subtitle-font-family);
+  font-family: var(--font-family);
   color: var(--subtitle-text-color);
   font-size: var(--subtitle-text-size);
+  font-weight: var(--subtitle-text-weight);
   padding: 1rem;
 }
 

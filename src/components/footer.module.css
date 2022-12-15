@@ -11,7 +11,8 @@
 .footer-link {
   color: var(--subtitle-text-color);
   font-size: var(--subtitle-text-size);
-  font-family: var(--subtitle-font-family);
+  font-family: var(--font-family);
+  font-weight: var(--subtitle-text-weight);
   text-decoration: none;
 }
 .footer-icon {
@@ -19,6 +20,6 @@
   padding: 0 1em;
   color: var(--subtitle-text-color);
   background-color: transparent;
-  font-family: var(--subtitle-font-family);
+  font-family: var(--font-family);
   transition: all 0.2s ease-in-out;
 }

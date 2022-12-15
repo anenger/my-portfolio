@@ -1,5 +1,5 @@
 .resume-job-item {
-  font-family: var(--subtitle-font-family);
+  font-family: var(--font-family);
 }
 
 .resume-job-flexbox {
@@ -11,15 +11,15 @@
 
 .resume-job-title {
   color: var(--subtitle-text-color);
-  font-family: var(--subtitle-font-family);
+  font-family: var(--font-family);
 }
 
 .resume-job-title > a {
   color: var(--title-text-color);
-  font-family: var(--subtitle-font-family);
+  font-family: var(--font-family);
   text-decoration: none;
 }
 
 .resume-job-description-item {
-  font-family: var(--subtitle-font-family);
+  font-family: var(--font-family);
 }

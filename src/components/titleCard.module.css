@@ -5,7 +5,7 @@
   padding: 1rem;
 }
 
-@media (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
   .title-div {
     flex-direction: column;
     justify-content: space-evenly;
@@ -21,54 +21,26 @@
 }
 
 .title-heading {
-  /* Font styling */
-  font-size: 48px;
-  font-family: var(--big-font-family);
-  font-style: italic;
-  font-weight: bold;
-  text-shadow: 2px 0 #84a98c;
-  letter-spacing: 0.05em;
-  color: #84a98c;
+  font-size: var(--big-text-size);
+  font-family: var(--font-family);
+  font-weight: var(--big-text-weight);
+  color: var(--big-text-color);
+  text-shadow: 2px 1px black;
   padding-bottom: 0.5rem;
 }
 
 .title-sub-heading {
   color: var(--title-text-color);
   font-size: var(--title-text-size);
-  font-weight: 700;
-  font-family: var(--title-font-family);
+  font-weight: var(--title-text-weight);
+  font-family: var(--font-family);
   text-shadow: 2px 1px 2px black;
 }
 
 .title-description {
   color: var(--subtitle-text-color);
   font-size: var(--subtitle-text-size);
-  font-family: var(--subtitle-font-family);
-}
-
-.title-description > p > a {
-  color: var(--title-text-color);
-  display: inline-block;
-  position: relative;
-  text-decoration: none;
-}
-
-.title-description > p > a::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--hover-text-color);
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.title-description > p > a:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+  font-family: var(--font-family);
 }
 
 .title-image-div {

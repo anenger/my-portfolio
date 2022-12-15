@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import Icons from "./icons";
 import {
@@ -14,32 +13,29 @@ import {
 import { hoverUnderlineAnimation } from "./global.module.css";
 
 const TitleCard = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      titleCard: markdownRemark(
-        fileAbsolutePath: { regex: "/content/titleCard/" }
-      ) {
-        frontmatter {
-          title
-          subtitle
-        }
-        html
-      }
-    }
-  `);
-
-  const { frontmatter, html } = data.titleCard;
-  const { title, subtitle } = frontmatter;
+  const title = "Hey! I'm Andrew 👋";
+  const subtitle = "I'm a full-stack Software Engineer";
 
   return (
     <div className={titleDiv} id="title">
       <div className={titleText}>
         <div className={titleHeading}>{title}</div>
         <div className={titleSubHeading}>{subtitle}</div>
-        <p
-          className={`${titleDescription} ${hoverUnderlineAnimation}`}
-          dangerouslySetInnerHTML={{ __html: html }}
-        ></p>
+        <p className={`${titleDescription}`}>
+          I enjoy creating interactive experiences on the web. Currently, I work
+          at Microsoft using technologies such as React, Node, Typescript, and
+          Azure on the{" "}
+          <a
+            href={"https://loop.microsoft.com/learn"}
+            className={hoverUnderlineAnimation}
+            style={{
+              color: "var(--title-text-color)",
+            }}
+          >
+            Microsoft Loop
+          </a>{" "}
+          team.
+        </p>
         <Icons />
       </div>
       <div className={titleImageDiv}>

@@ -8,8 +8,8 @@
 .gallery-heading {
   color: var(--title-text-color);
   font-size: var(--title-text-size);
-  font-weight: 700;
-  font-family: var(--title-font-family);
+  font-weight: var(--title-text-weight);
+  font-family: var(--font-family);
   text-shadow: 2px 1px 2px black;
 }
 
@@ -24,7 +24,7 @@
     ". .";
 }
 
-@media (max-width: 1000px) and (min-width: 300px) {
+@media screen and (max-width: 1000px) {
   .gallery-images {
     display: flex;
     flex-direction: column;

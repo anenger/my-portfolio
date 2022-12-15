@@ -9,9 +9,9 @@
 .heading {
   font-size: var(--big-text-size);
   color: var(--big-text-color);
-  font-family: var(--big-font-family);
+  font-weight: var(--big-text-weight);
+  font-family: var(--font-family);
   font-style: italic;
-  font-weight: bold;
   text-shadow: 2px 0 #84a98c;
   letter-spacing: 1.5px;
   padding-bottom: 0.5rem;
@@ -20,7 +20,7 @@
 }
 
 .paragraph {
-  font-family: var(--subtitle-font-family);
+  font-family: var(--font-family);
   color: var(--subtitle-text-color);
   font-size: var(--subtitle-text-size);
 }

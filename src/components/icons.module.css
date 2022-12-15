@@ -1,16 +1,25 @@
 .icons-div {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: flex-start;
   padding: 1em;
 }
 
+@media screen and (max-width: 1000px) {
+  .icons-div {
+    justify-content: space-evenly;
+    padding: 2em;
+  }
+}
+
 .icon-style {
-  font-size: 4em;
+  display: flex;
+  padding: 0 0.5em;
+  font-size: 3em;
   color: var(--subtitle-text-color);
   background-color: transparent;
-  font-family: var(--subtitle-font-family);
+  font-family: var(--font-family);
   transition: all 0.2s ease-in-out;
 }
 

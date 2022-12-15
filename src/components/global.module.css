@@ -1,15 +1,16 @@
 :root {
   --big-text-color: #84a98c;
   --big-text-size: 48px;
+  --big-text-weight: 700;
   --title-text-color: #ef946c;
   --title-text-size: 32px;
+  --title-text-weight: 700;
   --subtitle-text-color: #cad2c5;
   --subtitle-text-size: 20px;
+  --subtitle-text-weight: 400;
   --hover-text-color: #54b3d6;
   --underline-text-color: #0087ca;
-  --title-font-family: "Asap", Arial, sans-serif;
-  --subtitle-font-family: "Spinnaker", Arial, sans-serif;
-  --big-font-family: "Exo", Arial, sans-serif;
+  --font-family: "Unbounded", Arial, sans-serif;
 }
 
 html {
@@ -42,7 +43,7 @@ body {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media screen and (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }

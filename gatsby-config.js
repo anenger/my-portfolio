@@ -55,21 +55,9 @@ module.exports = {
         web: [
           {
             /* Exact name of the font as defied in @font-face CSS rule */
-            name: "Exo",
+            name: "Unbounded",
             /* URL to the font CSS file with @font-face definition */
-            file: "https://fonts.googleapis.com/css2?family=Exo&display=swap",
-          },
-          {
-            /* Exact name of the font as defied in @font-face CSS rule */
-            name: "Asap",
-            /* URL to the font CSS file with @font-face definition */
-            file: "https://fonts.googleapis.com/css2?family=Asap&display=swap",
-          },
-          {
-            /* Exact name of the font as defied in @font-face CSS rule */
-            name: "Spinnaker",
-            /* URL to the font CSS file with @font-face definition */
-            file: "https://fonts.googleapis.com/css2?family=Spinnaker&display=swap",
+            file: "https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&display=swap",
           },
         ],
       },
