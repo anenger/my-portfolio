@@ -1,5 +1,6 @@
 .nav-box {
   background: rgb(70, 55, 47, 0.75);
+  backdrop-filter: blur(8px);
   padding: 0.1em 0;
   position: sticky;
   top: 0;
