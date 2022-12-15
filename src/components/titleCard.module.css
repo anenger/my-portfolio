@@ -46,9 +46,29 @@
   font-family: var(--subtitle-font-family);
 }
 
-.title-description > a {
+.title-description > p > a {
   color: var(--title-text-color);
+  display: inline-block;
+  position: relative;
   text-decoration: none;
+}
+
+.title-description > p > a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--hover-text-color);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.title-description > p > a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .title-image-div {

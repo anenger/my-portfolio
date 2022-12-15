@@ -1,6 +1,6 @@
 .nav-box {
-  background-color: #46372f;
-  padding: 0.5rem 0;
+  background: rgb(70, 55, 47, 0.75);
+  padding: 0.1em 0;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -12,11 +12,17 @@
 .nav-links {
   display: flex;
   list-style: none;
-  padding-inline-start: 1em;
+  padding-inline-start: 2em;
+}
+
+@media (max-width: 1000px) {
+  .nav-links {
+    padding-inline-start: 1em;
+  }
 }
 
 .nav-link-item {
-  padding-inline-end: 0.75em;
+  padding-inline-end: 1em;
 }
 
 .nav-link-text {

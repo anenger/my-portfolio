@@ -11,6 +11,7 @@ import {
   titleImageDiv,
   titleImage,
 } from "./titleCard.module.css";
+import { hoverUnderlineAnimation } from "./global.module.css";
 
 const TitleCard = () => {
   const data = useStaticQuery(graphql`
@@ -31,12 +32,12 @@ const TitleCard = () => {
   const { title, subtitle } = frontmatter;
 
   return (
-    <div className={titleDiv}>
+    <div className={titleDiv} id="title">
       <div className={titleText}>
         <div className={titleHeading}>{title}</div>
         <div className={titleSubHeading}>{subtitle}</div>
         <p
-          className={titleDescription}
+          className={`${titleDescription} ${hoverUnderlineAnimation}`}
           dangerouslySetInnerHTML={{ __html: html }}
         ></p>
         <Icons />

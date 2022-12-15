@@ -1,5 +1,5 @@
 ---
-title: "Hi, I'm Andrew Enger"
+title: "Hey! I'm Andrew 👋"
 subtitle: "I'm a full-stack Software Engineer"
 updated: "2022-12-14"
 ---

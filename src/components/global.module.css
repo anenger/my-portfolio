@@ -53,13 +53,13 @@ a:focus-visible {
   border-radius: 4px;
 }
 
-.hover-underline-animation {
+a.hover-underline-animation {
   display: inline-block;
   position: relative;
   text-decoration: none;
 }
 
-.hover-underline-animation::after {
+a.hover-underline-animation::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -72,7 +72,7 @@ a:focus-visible {
   transition: transform 0.25s ease-out;
 }
 
-.hover-underline-animation:hover::after {
+a.hover-underline-animation:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
