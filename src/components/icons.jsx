@@ -18,6 +18,7 @@ const Icons = () => {
         href={links["github"]}
         target="_blank"
         rel="nofollow noopener noreferrer"
+        aria-label="Github"
       >
         <VscGithub />
       </a>
@@ -26,6 +27,7 @@ const Icons = () => {
         href={links["linkedin"]}
         target="_blank"
         rel="nofollow noopener noreferrer"
+        aria-label="LinkedIn"
       >
         <AiOutlineLinkedin />
       </a>
@@ -34,6 +36,7 @@ const Icons = () => {
         href={links["email"]}
         target="_blank"
         rel="nofollow noopener noreferrer"
+        aria-label="Email me!"
       >
         <AiOutlineMail />
       </a>
