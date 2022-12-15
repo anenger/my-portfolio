@@ -1,8 +1,7 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 import Icons from "./icons";
-
 import {
   titleDiv,
   titleText,
@@ -13,35 +12,41 @@ import {
   titleImage,
 } from "./titleCard.module.css";
 
-const TitleCard = ({ title, subtitle, description }) => {
-  const headshotFile = useStaticQuery(graphql`
+const TitleCard = () => {
+  const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "headshot.jpg" }) {
-        name
-        childImageSharp {
-          gatsbyImageData(width: 800, quality: 75)
+      titleCard: markdownRemark(
+        fileAbsolutePath: { regex: "/content/titleCard/" }
+      ) {
+        frontmatter {
+          title
+          subtitle
         }
+        html
       }
     }
   `);
 
-  let image = getImage(headshotFile.file);
-  let alt = headshotFile.file.name;
+  const { frontmatter, html } = data.titleCard;
+  const { title, subtitle } = frontmatter;
 
   return (
     <div className={titleDiv}>
       <div className={titleText}>
         <div className={titleHeading}>{title}</div>
         <div className={titleSubHeading}>{subtitle}</div>
-        <p className={titleDescription}>{description}</p>
+        <p
+          className={titleDescription}
+          dangerouslySetInnerHTML={{ __html: html }}
+        ></p>
         <Icons />
       </div>
       <div className={titleImageDiv}>
-        <GatsbyImage
+        <StaticImage
           className={titleImage}
-          image={image}
-          alt={alt}
-        ></GatsbyImage>
+          src={"../images/headshot.jpg"}
+          alt={"Headshot of me"}
+        ></StaticImage>
       </div>
     </div>
   );

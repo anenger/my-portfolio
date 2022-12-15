@@ -9,29 +9,23 @@ import {
 } from "./navbar.module.css";
 
 const Navbar = () => {
+  const elements = [
+    { Home: "/" },
+    { About: "#about" },
+    { Work: "#work" },
+    { Photos: "#projects" },
+  ];
+
   return (
     <nav className={navBox}>
       <ul className={navLinks}>
-        <li className={navLinkItem}>
-          <Link to="/" className={navLinkText}>
-            Home
-          </Link>
-        </li>
-        <li className={navLinkItem}>
-          <Link to="#about" className={navLinkText}>
-            About
-          </Link>
-        </li>
-        <li className={navLinkItem}>
-          <Link to="#work" className={navLinkText}>
-            Work
-          </Link>
-        </li>
-        <li className={navLinkItem}>
-          <Link to="#projects" className={navLinkText}>
-            Photos
-          </Link>
-        </li>
+        {elements.map((value, index) => (
+          <li className={navLinkItem} index={index}>
+            <Link to={Object.values(value)[0]} className={navLinkText}>
+              {Object.keys(value)[0]}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

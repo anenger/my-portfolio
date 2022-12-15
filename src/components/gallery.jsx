@@ -32,6 +32,7 @@ const Gallery = ({ title }) => {
       }
     }
   `);
+
   return (
     <div className={galleryDiv} id="projects">
       <h2 className={galleryHeading}>{title}</h2>

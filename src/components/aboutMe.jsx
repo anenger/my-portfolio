@@ -11,7 +11,7 @@ const AboutMe = ({ title }) => {
   const data = useStaticQuery(graphql`
     query {
       aboutMe: markdownRemark(
-        fileAbsolutePath: { regex: "/content/static/aboutMe/" }
+        fileAbsolutePath: { regex: "/content/aboutMe/" }
       ) {
         html
       }
