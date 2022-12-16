@@ -10,7 +10,8 @@ import {
 
 const LastFM = () => {
   const [scrobbleData, setScrobbleData] = React.useState({});
-  const { isMobile } = useWidth();
+  const width = useWidth();
+  const isMobile = width < 800;
   React.useEffect(() => {
     fetch("/api/lastFM")
       .then((response) => {

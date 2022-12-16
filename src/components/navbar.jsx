@@ -20,7 +20,8 @@ const Navbar = () => {
     { Photos: "#projects" },
   ];
 
-  const { isMobile } = useWidth();
+  const width = useWidth();
+  const isMobile = width < 800;
 
   const [isOpen, setIsOpen] = React.useState(false);
   const handleClick = () => {
