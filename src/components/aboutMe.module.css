@@ -23,7 +23,7 @@
 }
 
 /* Media query to make the flexbox responsive */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 550px) {
   .about-me-flex {
     display: flex;
     flex-direction: column;
