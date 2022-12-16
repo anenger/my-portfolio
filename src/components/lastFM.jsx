@@ -8,24 +8,14 @@ import {
 } from "./lastFM.module.css";
 
 const LastFM = () => {
-  const apiKey = process.env.LASTFM_API_KEY;
-  const username = process.env.LASTFM_USERNAME;
-  const url = `https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=${username}&api_key=${apiKey}&limit=1&nowplaying=true&format=json`;
-
   const [scrobbleData, setScrobbleData] = React.useState({});
   React.useEffect(() => {
-    fetch(url)
+    fetch("/api/lastFM")
       .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error("error");
+        return response.json();
       })
-      .then((data) => setScrobbleData(data))
-      .catch(() =>
-        setScrobbleData({ error: "Whoops! Something went wrong with Last.fm" })
-      );
-  }, [url]);
+      .then((data) => setScrobbleData(data));
+  }, []);
 
   const { error } = scrobbleData;
   const track = scrobbleData?.recenttracks?.track;
