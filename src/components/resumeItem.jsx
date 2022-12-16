@@ -6,23 +6,25 @@ import {
   resumeJobItem,
   resumeJobFlexbox,
   resumeJobTitle,
+  resumeJobCompany,
   resumeJobDescriptionItem,
 } from "./resumeItem.module.css";
 
 const ResumeItem = ({ index, title, url, company, range, html }) => {
   return (
     <div className={resumeJobItem}>
-      <div className={resumeJobFlexbox}>
-        <span className={resumeJobTitle}>
-          {`${title} @ `}
-          <a href={url} className={hoverUnderlineAnimation}>
-            {company}
-          </a>
-        </span>
+      <div className={resumeJobFlexbox} id={`resume-title-${index}`}>
+        <a
+          href={url}
+          className={`${resumeJobCompany} ${hoverUnderlineAnimation}`}
+        >
+          {company}
+        </a>
+        <span className={resumeJobTitle}>{title}</span>
         <span className={resumeJobTitle}>{range}</span>
       </div>
       <div
-        index={index}
+        id={`resume-description-${index}`}
         className={resumeJobDescriptionItem}
         dangerouslySetInnerHTML={{ __html: html }}
       ></div>

@@ -3,7 +3,7 @@ import * as React from "react";
 import { VscGithub } from "react-icons/vsc";
 import { AiOutlineLinkedin, AiOutlineMail } from "react-icons/ai";
 
-import { iconsDiv, iconStyle } from "./icons.module.css";
+import { iconsDiv, iconStyle, iconSvgStyle } from "./icons.module.css";
 
 const Icons = () => {
   const links = {
@@ -20,7 +20,7 @@ const Icons = () => {
         rel="nofollow noopener noreferrer"
         aria-label="Github"
       >
-        <VscGithub />
+        <VscGithub className={iconSvgStyle} />
       </a>
       <a
         className={iconStyle}
@@ -29,7 +29,7 @@ const Icons = () => {
         rel="nofollow noopener noreferrer"
         aria-label="LinkedIn"
       >
-        <AiOutlineLinkedin />
+        <AiOutlineLinkedin className={iconSvgStyle} />
       </a>
       <a
         className={iconStyle}
@@ -38,7 +38,7 @@ const Icons = () => {
         rel="nofollow noopener noreferrer"
         aria-label="Email me!"
       >
-        <AiOutlineMail />
+        <AiOutlineMail className={iconSvgStyle} />
       </a>
     </div>
   );

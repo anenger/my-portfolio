@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: flex-start;
   padding: 1em;
+  max-width: fit-content;
 }
 
 @media screen and (max-width: 1000px) {
@@ -15,12 +16,12 @@
 
 .icon-style {
   display: flex;
-  padding: 0 0.5em;
   font-size: 3em;
   color: var(--subtitle-text-color);
   background-color: transparent;
   font-family: var(--font-family);
   transition: all 0.2s ease-in-out;
+  margin: 0 1em;
 }
 
 .icon-style:hover {
@@ -31,4 +32,7 @@
 .icon-style:focus-visible {
   color: var(--title-text-color);
   transform: scale(1.2);
+}
+
+.icon-svg-style {
 }

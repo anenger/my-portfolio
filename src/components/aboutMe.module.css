@@ -19,6 +19,7 @@
   font-size: var(--subtitle-text-size);
   font-weight: var(--subtitle-text-weight);
   padding: 1rem;
+  line-height: 2rem;
 }
 
 .about-me-description > p {

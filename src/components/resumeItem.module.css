@@ -1,12 +1,25 @@
 .resume-job-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   font-family: var(--font-family);
+  padding: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .resume-job-item {
+    flex-direction: column;
+  }
 }
 
 .resume-job-flexbox {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   padding: 4px;
+  background-color: transparent;
+  border-radius: 4px;
+  line-height: 2rem;
 }
 
 .resume-job-title {
@@ -14,12 +27,29 @@
   font-family: var(--font-family);
 }
 
-.resume-job-title > a {
+.resume-job-company {
   color: var(--title-text-color);
+  font-size: var(--title-text-size);
   font-family: var(--font-family);
+  font-weight: var(--title-text-weight);
   text-decoration: none;
+  width: fit-content;
 }
 
 .resume-job-description-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 40vw;
   font-family: var(--font-family);
+}
+
+@media screen and (max-width: 1000px) {
+  .resume-job-description-item {
+    max-width: 100vw;
+  }
+}
+
+.resume-job-description-item > ul > li {
+  line-height: 2rem;
 }
