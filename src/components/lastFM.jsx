@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useWidth } from "../hooks/useWidth";
 
 import {
   lastFmDiv,
@@ -9,6 +10,7 @@ import {
 
 const LastFM = () => {
   const [scrobbleData, setScrobbleData] = React.useState({});
+  const { isMobile } = useWidth();
   React.useEffect(() => {
     fetch("/api/lastFM")
       .then((response) => {
@@ -46,6 +48,7 @@ const LastFM = () => {
     },
   ] = track;
 
+  const smallAlbum = albumData[2]["#text"];
   const albumArt = albumData.slice(-1)[0]["#text"];
 
   return (
@@ -53,7 +56,7 @@ const LastFM = () => {
       <div className={lastFmImageDiv}>
         <img
           className={lastFmImage}
-          src={albumArt}
+          src={isMobile ? smallAlbum : albumArt}
           alt={"Album art for current song"}
         ></img>
       </div>

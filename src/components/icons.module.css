@@ -7,13 +7,6 @@
   max-width: fit-content;
 }
 
-@media screen and (max-width: 1000px) {
-  .icons-div {
-    justify-content: space-evenly;
-    padding: 2em;
-  }
-}
-
 .icon-style {
   display: flex;
   font-size: 3em;
@@ -32,4 +25,16 @@
 .icon-style:focus-visible {
   color: var(--title-text-color);
   transform: scale(1.2);
+}
+
+@media screen and (max-width: 1000px) {
+  .icons-div {
+    justify-content: space-evenly;
+    padding: 2em;
+    margin: auto;
+  }
+
+  .icon-style {
+    margin: 0 0.25em;
+  }
 }

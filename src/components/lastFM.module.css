@@ -13,13 +13,15 @@
 }
 
 .last-fm-image-div {
-  padding: 2rem;
-  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .last-fm-image {
-  object-fit: cover;
-  width: 300px;
-  height: 300px;
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  max-height: 300px;
   filter: drop-shadow(5px 5px 4px black);
 }

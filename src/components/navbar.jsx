@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useWidth } from "../hooks/useWidth";
+import { AiOutlineMenu } from "react-icons/ai";
 
 import {
   navBox,
@@ -15,16 +17,26 @@ const Navbar = () => {
     { Photos: "#projects" },
   ];
 
+  const { isMobile } = useWidth();
+
   return (
     <nav className={navBox}>
       <ul className={navLinks}>
-        {elements.map((value, index) => (
-          <li className={navLinkItem} index={index}>
-            <a href={Object.values(value)[0]} className={navLinkText}>
-              {Object.keys(value)[0]}
+        {isMobile ? (
+          <li className={navLinkItem}>
+            <a className={navLinkText} href="#burger">
+              <AiOutlineMenu />
             </a>
           </li>
-        ))}
+        ) : (
+          elements.map((value, index) => (
+            <li className={navLinkItem} index={index}>
+              <a href={Object.values(value)[0]} className={navLinkText}>
+                {Object.keys(value)[0]}
+              </a>
+            </li>
+          ))
+        )}
       </ul>
     </nav>
   );

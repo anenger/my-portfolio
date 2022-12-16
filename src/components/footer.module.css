@@ -2,12 +2,6 @@
   margin: 0 auto;
   width: 100vw;
 }
-@media screen and (max-width: 1000px) {
-  .footer {
-    margin: 0 0.5em;
-    width: 95%;
-  }
-}
 
 .footer-div {
   display: flex;
@@ -30,4 +24,14 @@
   background-color: transparent;
   font-family: var(--font-family);
   transition: all 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 1000px) {
+  .footer {
+    margin: 0 0.5em;
+    width: 95%;
+  }
+  .footer-div {
+    padding: 0.5em;
+  }
 }
