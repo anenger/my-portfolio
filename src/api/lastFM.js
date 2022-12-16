@@ -5,15 +5,16 @@ export default async function handler(req, res) {
   const username = process.env.LASTFM_USERNAME;
   const url = `https://ws.audioscrobbler.com/2.0/?method=user.getRecentTracks&user=${username}&api_key=${apiKey}&limit=1&nowplaying=true&format=json`;
 
-  try {
-    const result = await fetch(url).then((resp) => {
-      return resp.json();
+  const result = await fetch(url)
+    .then((resp) => {
+      if (resp.ok) {
+        return resp.json();
+      } else {
+        throw new Error("Something went wrong with Last.fm");
+      }
+    })
+    .catch(() => {
+      return { error: "Whoops! Something went wrong with Last.fm" };
     });
-
-    res.json(result);
-  } catch (error) {
-    res
-      .status(500)
-      .json({ error: "Whoops! Something went wrong with Last.fm" });
-  }
+  res.json(result);
 }

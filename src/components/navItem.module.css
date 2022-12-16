@@ -1,5 +1,6 @@
 .nav-link-item {
   padding-inline-end: 1em;
+  opacity: 0;
 }
 
 .nav-link-text {
@@ -16,4 +17,19 @@
 .nav-link-text:hover {
   box-shadow: inset 100px 0 0 0 var(--hover-text-color);
   color: white;
+}
+
+.transition-animation {
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

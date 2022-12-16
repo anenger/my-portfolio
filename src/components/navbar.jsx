@@ -11,6 +11,7 @@ import {
   burgerDivSlide,
   burgerIcon,
 } from "./navbar.module.css";
+import { usePageLoad } from "../hooks/usePageLoad";
 
 const Navbar = () => {
   const elements = [
@@ -21,6 +22,7 @@ const Navbar = () => {
   ];
 
   const width = useWidth();
+  const isPageLoaded = usePageLoad();
   const isMobile = width < 800;
 
   const [isOpen, setIsOpen] = React.useState(false);
@@ -34,6 +36,7 @@ const Navbar = () => {
       title={Object.keys(value)[0]}
       index={index}
       menuCallback={handleClick}
+      isPageLoaded={isPageLoaded}
     ></NavItem>
   ));
 
