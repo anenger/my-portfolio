@@ -14,6 +14,6 @@ export default async function handler(req, res) {
   } catch (error) {
     res
       .status(500)
-      .send({ error: "Whoops! Something went wrong with Last.fm" });
+      .json({ error: "Whoops! Something went wrong with Last.fm" });
   }
 }

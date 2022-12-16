@@ -20,11 +20,19 @@ const LastFM = () => {
   const { error } = scrobbleData;
   const track = scrobbleData?.recenttracks?.track;
 
-  if (!track) {
+  if (!track && !error) {
     return (
       <div className={lastFmDiv}>
         <div className={lastFmText}>
           <p>Loading LastFM data...</p>
+        </div>
+      </div>
+    );
+  } else if (error) {
+    return (
+      <div className={lastFmDiv}>
+        <div className={lastFmText}>
+          <p>{error}</p>
         </div>
       </div>
     );
@@ -50,13 +58,9 @@ const LastFM = () => {
         ></img>
       </div>
       <div className={lastFmText}>
-        {error ? (
-          <p>{error}</p>
-        ) : (
-          <p>
-            {"Listening to:"} <br /> {`${songName} - ${artistName}`}
-          </p>
-        )}
+        <p>
+          {"Listening to:"} <br /> {`${songName} by ${artistName}`}
+        </p>
       </div>
     </div>
   );
