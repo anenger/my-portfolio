@@ -1,12 +1,15 @@
 import * as React from "react";
-import { useWidth } from "../hooks/useWidth";
+
+import NavItem from "./navItem";
 import { AiOutlineMenu } from "react-icons/ai";
+import { useWidth } from "../hooks/useWidth";
 
 import {
   navBox,
   navLinks,
-  navLinkItem,
-  navLinkText,
+  burgerDiv,
+  burgerDivSlide,
+  burgerIcon,
 } from "./navbar.module.css";
 
 const Navbar = () => {
@@ -19,25 +22,38 @@ const Navbar = () => {
 
   const { isMobile } = useWidth();
 
+  const [isOpen, setIsOpen] = React.useState(false);
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const menuElements = elements.map((value, index) => (
+    <NavItem
+      link={Object.values(value)[0]}
+      title={Object.keys(value)[0]}
+      index={index}
+      menuCallback={handleClick}
+    ></NavItem>
+  ));
+
   return (
     <nav className={navBox}>
-      <ul className={navLinks}>
-        {isMobile ? (
-          <li className={navLinkItem}>
-            <a className={navLinkText} href="#burger">
-              <AiOutlineMenu />
-            </a>
-          </li>
-        ) : (
-          elements.map((value, index) => (
-            <li className={navLinkItem} index={index}>
-              <a href={Object.values(value)[0]} className={navLinkText}>
-                {Object.keys(value)[0]}
-              </a>
-            </li>
-          ))
-        )}
-      </ul>
+      {isMobile ? (
+        <>
+          <div className={burgerIcon}>
+            <AiOutlineMenu onClick={handleClick} />
+          </div>
+          <ul
+            className={
+              isOpen ? `${burgerDiv} ${burgerDivSlide}` : `${burgerDiv}`
+            }
+          >
+            {menuElements}
+          </ul>
+        </>
+      ) : (
+        <ul className={navLinks}>{menuElements}</ul>
+      )}
     </nav>
   );
 };

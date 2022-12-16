@@ -11,6 +11,7 @@
   --hover-text-color: #54b3d6;
   --underline-text-color: #0087ca;
   --font-family: "Unbounded", Arial, sans-serif;
+  --nav-background: rgb(70, 55, 47, 0.9);
 }
 
 html {
