@@ -25,23 +25,11 @@ html {
 body {
   margin: 0;
   max-width: 100%;
-  animation: fadeInAnimation ease 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
   overscroll-behavior: none;
   background-image: linear-gradient(
     rgba(47, 62, 70, 1) 0%,
     rgba(239, 148, 108, 1) 100%
   );
-}
-
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0.01;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

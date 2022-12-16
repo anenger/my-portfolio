@@ -7,13 +7,25 @@ import TitleCard from "./titleCard";
 import Resume from "./resume";
 import Gallery from "./gallery";
 
-import { parentContainer, childrenContainer } from "./layout.module.css";
+import { usePageLoad } from "../hooks/usePageLoad";
+import {
+  parentContainer,
+  childrenContainer,
+  transitionAnimation,
+} from "./layout.module.css";
 
 const Layout = () => {
+  const isComplete = usePageLoad();
   return (
     <div className={parentContainer}>
       <Navbar />
-      <main className={childrenContainer}>
+      <main
+        className={
+          isComplete
+            ? `${childrenContainer} ${transitionAnimation}`
+            : childrenContainer
+        }
+      >
         <TitleCard title="Title Card"></TitleCard>
         <AboutMe title="About Me"></AboutMe>
         <Resume title="Resume"></Resume>

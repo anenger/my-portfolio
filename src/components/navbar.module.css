@@ -16,6 +16,12 @@
   padding-inline-start: 2em;
 }
 
+@media screen and (max-width: 800px) {
+  .nav-links {
+    opacity: 0;
+  }
+}
+
 /* Start div offscreen */
 .burger-div {
   position: absolute;
