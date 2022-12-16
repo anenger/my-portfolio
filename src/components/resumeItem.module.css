@@ -39,7 +39,7 @@
   font-weight: var(--title-text-weight);
   text-decoration: none;
   width: fit-content;
-  padding: 0.5em 0;
+  margin: 0.5em 0;
 }
 
 .resume-job-description-item {

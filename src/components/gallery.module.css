@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
 }
 
 .gallery-heading {
@@ -11,6 +11,8 @@
   font-weight: var(--title-text-weight);
   font-family: var(--font-family);
   text-shadow: 2px 1px 2px black;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--subtitle-text-color);
 }
 
 .gallery-images {
