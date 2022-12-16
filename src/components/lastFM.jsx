@@ -5,7 +5,7 @@ import {
   lastFmText,
   lastFmImageDiv,
   lastFmImage,
-} from "./lastfm.module.css";
+} from "./lastFM.module.css";
 
 const LastFM = () => {
   const apiKey = process.env.LASTFM_API_KEY;
@@ -44,7 +44,6 @@ const LastFM = () => {
     {
       name: songName,
       artist: { "#text": artistName },
-      album: { "#text": albumName },
       image: albumData,
     },
   ] = track;
@@ -61,11 +60,13 @@ const LastFM = () => {
         ></img>
       </div>
       <div className={lastFmText}>
-        <p>
-          {error
-            ? error
-            : `Now playing:\n ${songName} by ${artistName} from ${albumName}`}
-        </p>
+        {error ? (
+          <p>{error}</p>
+        ) : (
+          <p>
+            {"Listening to:"} <br /> {`${songName} - ${artistName}`}
+          </p>
+        )}
       </div>
     </div>
   );
