@@ -52,7 +52,7 @@
 
 @media screen and (max-width: 1000px) {
   .resume-job-description-item {
-    max-width: 100vw;
+    max-width: 100%;
   }
 }
 

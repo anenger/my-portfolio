@@ -14,8 +14,17 @@
 }
 
 .resume-job-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   font-family: var(--font-family);
   color: var(--subtitle-text-color);
   font-size: var(--subtitle-text-size);
   padding: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .resume-job-list {
+    padding: 1rem 0;
+  }
 }

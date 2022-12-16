@@ -42,7 +42,7 @@
 /* Media query to make the description responsive */
 @media screen and (max-width: 1000px) {
   .about-me-description {
-    max-width: 100vw;
+    max-width: 100%;
     padding: 1rem 0;
   }
 }
