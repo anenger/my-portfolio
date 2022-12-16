@@ -3,7 +3,7 @@ date: "2021-06-30"
 title: "Software Development QA Co-op"
 company: "Wellframe, Inc."
 location: "Boston, MA"
-range: "February - June 2021"
+range: "Feb - Jun '21"
 url: "https://www.wellframe.com/"
 ---
 

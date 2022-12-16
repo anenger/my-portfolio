@@ -1,0 +1,22 @@
+.last-fm-div {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.last-fm-text {
+  font-family: var(--font-family);
+  color: var(--subtitle-text-color);
+  font-size: var(--subtitle-text-size);
+  padding: 1rem;
+}
+
+.last-fm-image-div {
+  padding: 1rem;
+  max-width: 300px;
+}
+
+.last-fm-image {
+  object-fit: cover;
+  filter: drop-shadow(5px 5px 4px black);
+}

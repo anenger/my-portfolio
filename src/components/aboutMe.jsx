@@ -1,9 +1,11 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import LastFM from "./lastFM";
 
 import {
   aboutMeDiv,
   aboutMeTitle,
+  aboutMeFlex,
   aboutMeDescription,
 } from "./aboutMe.module.css";
 
@@ -23,10 +25,13 @@ const AboutMe = ({ title }) => {
   return (
     <div className={aboutMeDiv} id="about">
       <h2 className={aboutMeTitle}>{title}</h2>
-      <div
-        className={aboutMeDescription}
-        dangerouslySetInnerHTML={{ __html: html }}
-      ></div>
+      <div className={aboutMeFlex}>
+        <div
+          className={aboutMeDescription}
+          dangerouslySetInnerHTML={{ __html: html }}
+        ></div>
+        <LastFM></LastFM>
+      </div>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 .footer {
+  margin: auto;
   width: 100vw;
 }
 .footer-div {
@@ -9,16 +10,16 @@
   padding: 1em;
 }
 .footer-link {
-  color: var(--subtitle-text-color);
-  font-size: var(--subtitle-text-size);
+  color: whitesmoke;
+  font-size: 16px;
   font-family: var(--font-family);
   font-weight: var(--subtitle-text-weight);
   text-decoration: none;
 }
 .footer-icon {
-  font-size: 2em;
+  font-size: 16px;
   padding: 0 1em;
-  color: var(--subtitle-text-color);
+  color: whitesmoke;
   background-color: transparent;
   font-family: var(--font-family);
   transition: all 0.2s ease-in-out;

@@ -3,7 +3,7 @@ date: "2022-08-01"
 title: "Software Engineer"
 company: "Microsoft"
 location: "Redmond, WA"
-range: "August 2022 - Present"
+range: "Aug '22 - Present"
 url: "https://www.microsoft.com/"
 ---
 

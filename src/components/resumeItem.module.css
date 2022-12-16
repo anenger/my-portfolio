@@ -3,7 +3,13 @@
   flex-direction: row;
   justify-content: space-between;
   font-family: var(--font-family);
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--subtitle-text-color);
+}
+
+.resume-job-item:last-of-type {
+  border-bottom: none;
 }
 
 @media screen and (max-width: 1000px) {
@@ -28,7 +34,7 @@
 }
 
 .resume-job-company {
-  color: var(--title-text-color);
+  color: var(--big-text-color);
   font-size: var(--title-text-size);
   font-family: var(--font-family);
   font-weight: var(--title-text-weight);

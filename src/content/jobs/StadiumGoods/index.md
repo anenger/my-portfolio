@@ -3,7 +3,7 @@ date: "2019-08-31"
 title: "IT Intern"
 company: "Stadium Goods"
 location: "New York, NY"
-range: "July - August 2019"
+range: "Jul - Aug '19"
 url: "https://www.stadiumgoods.com/"
 ---
 
