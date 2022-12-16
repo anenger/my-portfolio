@@ -8,4 +8,5 @@ url: "https://www.microsoft.com/"
 ---
 
 - Used React.js and Fluent UI to build functional components
+- Learned Fluid Framework to build responsive, collaborative experiences on the web
 - Updated styles to meet accessibility requirements
