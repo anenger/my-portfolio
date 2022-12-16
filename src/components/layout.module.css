@@ -3,8 +3,7 @@
 }
 
 .children-container {
-  margin: 0 5em;
-  display: inline-block;
+  margin: 0 5rem;
 }
 
 @media screen and (max-width: 1000px) {

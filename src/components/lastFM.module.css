@@ -9,11 +9,11 @@
   font-family: var(--font-family);
   color: var(--subtitle-text-color);
   font-size: var(--subtitle-text-size);
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .last-fm-image-div {
-  padding: 1rem;
+  padding: 2rem;
   max-width: 300px;
 }
 
