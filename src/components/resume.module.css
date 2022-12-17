@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   padding: 1rem;
+  scroll-margin-top: 80px;
 }
 
 .resume-header {

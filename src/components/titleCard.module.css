@@ -3,6 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 1rem;
+  scroll-margin-top: 40px;
 }
 
 @media screen and (max-width: 1000px) {
