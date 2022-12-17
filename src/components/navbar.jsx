@@ -10,6 +10,7 @@ import {
   burgerDiv,
   burgerDivSlide,
   burgerIcon,
+  burgerIconSelected,
 } from "./navbar.module.css";
 import { usePageLoad } from "../hooks/usePageLoad";
 
@@ -44,9 +45,13 @@ const Navbar = () => {
     <nav className={navBox}>
       {isMobile ? (
         <>
-          <div className={burgerIcon}>
+          <button
+            className={
+              isOpen ? `${burgerIcon} ${burgerIconSelected}` : `${burgerIcon}`
+            }
+          >
             <AiOutlineMenu onClick={handleClick} />
-          </div>
+          </button>
           <ul
             className={
               isOpen ? `${burgerDiv} ${burgerDivSlide}` : `${burgerDiv}`

@@ -1,6 +1,7 @@
 .nav-link-item {
   padding-inline-end: 1em;
   opacity: 0;
+  margin: 3.5px 0;
 }
 
 .nav-link-text {
