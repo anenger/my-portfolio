@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { hoverUnderlineAnimation } from "../components/global.module.css";
+import { hoverUnderlineAnimation } from "./global.module.css";
 
 import {
   resumeJobItem,
