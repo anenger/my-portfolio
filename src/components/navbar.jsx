@@ -52,6 +52,7 @@ const Navbar = ({ isPageLoaded, refs }) => {
             className={
               isOpen ? `${burgerIcon} ${burgerIconSelected}` : `${burgerIcon}`
             }
+            aria-label="Menu"
           >
             <AiOutlineMenu onClick={hamburgerClick} />
           </button>
