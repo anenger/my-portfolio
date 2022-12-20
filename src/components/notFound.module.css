@@ -1,9 +1,10 @@
 .page {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: flex-start;
-  padding: 1rem;
+  padding: 2rem;
+  height: calc(100vh - 4rem);
 }
 
 .heading {
@@ -23,4 +24,9 @@
   font-family: var(--font-family);
   color: var(--subtitle-text-color);
   font-size: var(--subtitle-text-size);
+}
+
+.link-text {
+  text-decoration: none;
+  color: var(--title-text-color);
 }

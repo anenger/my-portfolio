@@ -6,7 +6,7 @@ import {
   transitionAnimation,
 } from "./navItem.module.css";
 
-const NavItem = ({ title, index, onClick, isPageLoaded }) => {
+const NavItem = ({ title, index, onClick, isPageLoaded, isMobile }) => {
   return (
     <li
       className={

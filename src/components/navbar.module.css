@@ -33,19 +33,21 @@
   overflow: hidden;
   background-color: var(--nav-background);
   backdrop-filter: blur(8px);
-  transition: all 0.4s ease-in-out;
+  transition: all;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
   list-style: none;
   padding-inline-start: 0;
 }
 
 .burger-div-slide {
-  max-width: 40vw;
+  max-width: 50vw;
   left: 0px;
 }
 
 .burger-div > li {
-  padding: 1em;
-  text-align: center;
+  padding: 1em 2em;
+  text-align: flex-start;
 }
 
 .burger-icon {

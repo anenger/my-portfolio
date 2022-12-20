@@ -41,6 +41,7 @@ const Navbar = ({ isPageLoaded, refs }) => {
       index={index}
       onClick={scrollToElement}
       isPageLoaded={isPageLoaded}
+      isMobile={isMobile}
     ></NavItem>
   ));
 

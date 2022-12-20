@@ -14,13 +14,20 @@
   box-shadow: inset 0 0 0 0 var(--hover-text-color);
   margin: 0 -0.25rem;
   padding: 0 0.25rem;
-  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   cursor: pointer;
 }
 
 .nav-link-text:hover {
   box-shadow: inset 100px 0 0 0 var(--hover-text-color);
   color: white;
+}
+
+@media screen and (max-width: 800px) {
+  .nav-link-text:hover {
+    box-shadow: unset;
+    color: var(--title-text-color);
+  }
 }
 
 .nav-link-text:focus-visible {
@@ -31,7 +38,7 @@
 }
 
 .transition-animation {
-  animation: fadeInAnimation ease 2s;
+  animation: fadeInAnimation ease 1.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
