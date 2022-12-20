@@ -6,7 +6,7 @@ import {
   transitionAnimation,
 } from "./navItem.module.css";
 
-const NavItem = ({ link, title, index, menuCallback, isPageLoaded }) => {
+const NavItem = ({ title, index, onClick, isPageLoaded }) => {
   return (
     <li
       className={
@@ -14,9 +14,9 @@ const NavItem = ({ link, title, index, menuCallback, isPageLoaded }) => {
       }
       index={index}
     >
-      <a href={link} className={navLinkText} onClick={menuCallback}>
+      <button className={navLinkText} onClick={() => onClick(index)}>
         {title}
-      </a>
+      </button>
     </li>
   );
 };

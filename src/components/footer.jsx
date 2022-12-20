@@ -14,7 +14,7 @@ const Footer = () => {
           target="_blank"
           rel="nofollow noopener noreferrer"
         >
-          This site was built with Gatsby.js
+          Built with Gatsby.js
         </a>
         <GrGatsbyjs className={footerIcon} />
       </div>

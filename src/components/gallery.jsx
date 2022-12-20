@@ -11,7 +11,7 @@ import {
   galleryImage,
 } from "./gallery.module.css";
 
-const Gallery = ({ title }) => {
+const Gallery = ({ title, refProp }) => {
   const data = useStaticQuery(graphql`
     {
       allFile(
@@ -34,7 +34,7 @@ const Gallery = ({ title }) => {
   `);
 
   return (
-    <div className={galleryDiv} id="projects">
+    <div className={galleryDiv} ref={refProp}>
       <h2 className={galleryHeading}>{title}</h2>
       <div className={galleryFlex}>
         <div className={galleryImages}>

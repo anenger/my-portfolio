@@ -16,20 +16,18 @@
 
 html {
   scroll-behavior: smooth;
-  height: auto;
-  min-height: 100vh;
   max-width: 100%;
   overflow-x: hidden;
+  background-color: var(--nav-background);
+  background-image: linear-gradient(
+    rgba(47, 62, 70, 1) 0%,
+    rgba(239, 148, 108, 1) 100%
+  );
 }
 
 body {
   margin: 0;
   max-width: 100%;
-  overscroll-behavior: none;
-  background-image: linear-gradient(
-    rgba(47, 62, 70, 1) 0%,
-    rgba(239, 148, 108, 1) 100%
-  );
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

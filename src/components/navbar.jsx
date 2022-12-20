@@ -12,31 +12,34 @@ import {
   burgerIcon,
   burgerIconSelected,
 } from "./navbar.module.css";
-import { usePageLoad } from "../hooks/usePageLoad";
 
-const Navbar = () => {
+const Navbar = ({ isPageLoaded, refs }) => {
   const elements = [
-    { Home: "#title" },
-    { About: "#about" },
-    { Work: "#work" },
-    { Photos: "#projects" },
+    { Home: refs[0] },
+    { About: refs[1] },
+    { Work: refs[2] },
+    { Photos: refs[3] },
   ];
 
   const width = useWidth();
-  const isPageLoaded = usePageLoad();
   const isMobile = width < 800;
-
   const [isOpen, setIsOpen] = React.useState(false);
-  const handleClick = () => {
+
+  const hamburgerClick = () => {
     setIsOpen(!isOpen);
+  };
+
+  const scrollToElement = (index) => {
+    const ref = Object.values(elements[index])[0];
+    ref.current && ref.current.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
   };
 
   const menuElements = elements.map((value, index) => (
     <NavItem
-      link={Object.values(value)[0]}
       title={Object.keys(value)[0]}
       index={index}
-      menuCallback={handleClick}
+      onClick={scrollToElement}
       isPageLoaded={isPageLoaded}
     ></NavItem>
   ));
@@ -50,7 +53,7 @@ const Navbar = () => {
               isOpen ? `${burgerIcon} ${burgerIconSelected}` : `${burgerIcon}`
             }
           >
-            <AiOutlineMenu onClick={handleClick} />
+            <AiOutlineMenu onClick={hamburgerClick} />
           </button>
           <ul
             className={

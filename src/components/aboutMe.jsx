@@ -9,7 +9,7 @@ import {
   aboutMeDescription,
 } from "./aboutMe.module.css";
 
-const AboutMe = ({ title }) => {
+const AboutMe = ({ title, refProp }) => {
   const data = useStaticQuery(graphql`
     query {
       aboutMe: markdownRemark(
@@ -23,7 +23,7 @@ const AboutMe = ({ title }) => {
   const html = data.aboutMe.html;
 
   return (
-    <div className={aboutMeDiv} id="about">
+    <div className={aboutMeDiv} ref={refProp}>
       <h2 className={aboutMeTitle}>{title}</h2>
       <div className={aboutMeFlex}>
         <div
