@@ -1,4 +1,4 @@
-.page {
+.not-found-div {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -7,7 +7,7 @@
   height: calc(100vh - 4rem);
 }
 
-.heading {
+.not-found-heading {
   font-size: var(--big-text-size);
   color: var(--big-text-color);
   font-weight: var(--big-text-weight);
@@ -20,13 +20,13 @@
   justify-content: center;
 }
 
-.paragraph {
+.not-found-paragraph {
   font-family: var(--font-family);
   color: var(--subtitle-text-color);
   font-size: var(--subtitle-text-size);
 }
 
-.link-text {
+.not-found-link-text {
   text-decoration: none;
   color: var(--title-text-color);
 }
