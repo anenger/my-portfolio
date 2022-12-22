@@ -4,7 +4,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   padding: 2rem;
-  height: calc(100vh - 4rem);
+  height: 100%;
 }
 
 .not-found-heading {

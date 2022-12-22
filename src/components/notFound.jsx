@@ -11,25 +11,21 @@ import { hoverUnderlineAnimation } from "./global.module.css";
 
 const NotFoundPage = () => {
   return (
-    <main>
-      <body>
-        <div className={notFoundDiv}>
-          <span className={notFoundHeading}>Page not found</span>
-          <p className={notFoundParagraph}>
-            Sorry 😔, we couldn't find what you were looking for.
-            <br />
-            <br />
-            <Link
-              to="/"
-              className={`${notFoundLinkText} ${hoverUnderlineAnimation}`}
-            >
-              Go home
-            </Link>
-            .
-          </p>
-        </div>
-      </body>
-    </main>
+    <div className={notFoundDiv}>
+      <span className={notFoundHeading}>Page not found</span>
+      <p className={notFoundParagraph}>
+        Sorry 😔, we couldn't find what you were looking for.
+        <br />
+        <br />
+        <Link
+          to="/"
+          className={`${notFoundLinkText} ${hoverUnderlineAnimation}`}
+        >
+          Go home
+        </Link>
+        .
+      </p>
+    </div>
   );
 };
 
