@@ -1,0 +1,21 @@
+.time-since-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 1rem;
+  max-width: 50vw;
+}
+
+.time-since-p {
+  font-size: var(--subtitle-text-size);
+  font-family: var(--font-family);
+  color: var(--subtitle-text-color);
+  background-color: transparent;
+  margin: 0;
+  line-height: 2rem;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}

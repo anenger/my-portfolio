@@ -23,6 +23,13 @@
   align-items: center;
 }
 
+.about-me-text-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 /* Media query to make the flexbox responsive */
 @media screen and (max-width: 550px) {
   .about-me-flex {
@@ -52,4 +59,8 @@
 
 .about-me-description > p {
   margin-top: 0;
+}
+
+.about-me-description > p:nth-child(2) {
+  margin: 0;
 }

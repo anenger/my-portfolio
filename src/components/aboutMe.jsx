@@ -1,11 +1,13 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import LastFM from "./lastFM";
+import TimeSince from "./timeSince";
 
 import {
   aboutMeDiv,
   aboutMeTitle,
   aboutMeFlex,
+  aboutMeTextFlex,
   aboutMeDescription,
 } from "./aboutMe.module.css";
 
@@ -26,11 +28,14 @@ const AboutMe = ({ title, refProp }) => {
     <div className={aboutMeDiv} ref={refProp}>
       <h2 className={aboutMeTitle}>{title}</h2>
       <div className={aboutMeFlex}>
-        <div
-          className={aboutMeDescription}
-          dangerouslySetInnerHTML={{ __html: html }}
-        ></div>
-        <LastFM></LastFM>
+        <div className={aboutMeTextFlex}>
+          <div
+            className={aboutMeDescription}
+            dangerouslySetInnerHTML={{ __html: html }}
+          ></div>
+          <TimeSince />
+        </div>
+        <LastFM />
       </div>
     </div>
   );
