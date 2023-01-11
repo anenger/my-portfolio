@@ -2,23 +2,20 @@ import React, { useEffect, useState } from "react";
 
 import { timeSinceDiv, timeSinceP } from "./timeSince.module.css";
 
+const getTimeSince = (startTime) => {
+  const start = new Date(startTime);
+  const timeSince = Date.now() - start.getTime();
+  return Math.floor(timeSince / 1000);
+};
+
 const TimeSince = () => {
   const [timeSince, setTimeSince] = useState(0);
 
   useEffect(() => {
-    const start = new Date("1999-09-08T02:30:00");
-    const now = new Date();
-    const timeSinceStart = now.getTime() - start.getTime();
-    setTimeSince(Math.floor(timeSinceStart / 1000));
-
-    // set an interval to update the time every second
+    setTimeSince(getTimeSince("1999-09-08T02:30:00"));
     const interval = setInterval(() => {
-      const now = new Date();
-      const timeSinceStart = now.getTime() - start.getTime();
-      setTimeSince(Math.floor(timeSinceStart / 1000));
+      setTimeSince(getTimeSince("1999-09-08T02:30:00"));
     }, 1000);
-
-    // Clear interval when component unmount
     return () => clearInterval(interval);
   }, []);
 
