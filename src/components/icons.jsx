@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { VscGithub } from "react-icons/vsc";
 import { AiOutlineLinkedin, AiOutlineMail } from "react-icons/ai";
+import { GrSoundcloud } from "react-icons/gr";
 
 import { iconsDiv, iconStyle } from "./icons.module.css";
 
@@ -10,6 +11,7 @@ const Icons = () => {
     github: "https://github.com/anenger",
     linkedin: "https://www.linkedin.com/in/andrew-enger/",
     email: "mailto:hi@anenger.com",
+    soundcloud: "https://soundcloud.com/securecop?utm_campaign=social_sharing",
   };
   return (
     <div className={iconsDiv}>
@@ -39,6 +41,15 @@ const Icons = () => {
         aria-label="Email me!"
       >
         <AiOutlineMail />
+      </a>
+      <a
+        className={iconStyle}
+        href={links["soundcloud"]}
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        aria-label="Soundcloud"
+      >
+        <GrSoundcloud />
       </a>
     </div>
   );
