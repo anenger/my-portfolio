@@ -19,3 +19,10 @@
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
 }
+
+@media screen and (max-width: 1000px) {
+  .time-since-div {
+    max-width: 100%;
+    padding: 1rem 0;
+  }
+}
