@@ -12,12 +12,12 @@ import {
 } from "./titleCard.module.css";
 import { hoverUnderlineAnimation } from "./global.module.css";
 
-const TitleCard = ({ refProp }) => {
+const TitleCard = () => {
   const title = "Hey! I'm Andrew 👋";
   const subtitle = "I'm a full-stack Software Engineer";
 
   return (
-    <div className={titleDiv} ref={refProp}>
+    <div className={titleDiv}>
       <div className={titleText}>
         <div className={titleHeading}>{title}</div>
         <div className={titleSubHeading}>{subtitle}</div>

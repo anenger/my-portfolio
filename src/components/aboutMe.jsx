@@ -11,7 +11,7 @@ import {
   aboutMeDescription,
 } from "./aboutMe.module.css";
 
-const AboutMe = ({ title, refProp }) => {
+const AboutMe = ({ title }) => {
   const data = useStaticQuery(graphql`
     query {
       aboutMe: markdownRemark(
@@ -25,7 +25,7 @@ const AboutMe = ({ title, refProp }) => {
   const html = data.aboutMe.html;
 
   return (
-    <div className={aboutMeDiv} ref={refProp}>
+    <div className={aboutMeDiv}>
       <h2 className={aboutMeTitle}>{title}</h2>
       <div className={aboutMeFlex}>
         <div className={aboutMeTextFlex}>

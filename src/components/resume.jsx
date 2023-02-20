@@ -4,7 +4,7 @@ import ResumeItem from "./resumeItem";
 
 import { resumeDiv, resumeHeader, resumeJobList } from "./resume.module.css";
 
-const Resume = ({ refProp }) => {
+const Resume = () => {
   const data = useStaticQuery(graphql`
     query {
       jobs: allMarkdownRemark(
@@ -30,7 +30,7 @@ const Resume = ({ refProp }) => {
   const jobsData = data.jobs.edges;
 
   return (
-    <div className={resumeDiv} ref={refProp}>
+    <div className={resumeDiv}>
       <h2 className={resumeHeader}>Where I've Worked</h2>
       <div className={resumeJobList}>
         {jobsData &&
