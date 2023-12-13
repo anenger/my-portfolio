@@ -1,17 +1,9 @@
 .title-div {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 2rem;
   scroll-margin-top: 40px;
-}
-
-@media screen and (max-width: 1000px) {
-  .title-div {
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 1rem;
-  }
 }
 
 .title-text {
@@ -20,6 +12,17 @@
   align-content: center;
   justify-content: center;
   max-width: 50em;
+}
+
+@media screen and (max-width: 1200px) {
+  .title-div {
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem;
+  }
+  .title-text {
+    max-width: unset;
+  }
 }
 
 .title-heading {

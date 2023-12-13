@@ -2,9 +2,11 @@ import * as React from "react";
 
 import { VscGithub } from "react-icons/vsc";
 import { AiOutlineLinkedin, AiOutlineMail } from "react-icons/ai";
-import { GrSoundcloud } from "react-icons/gr";
+import { PiSoundcloudLogoLight } from "react-icons/pi";
+import { IoDocumentTextOutline } from "react-icons/io5";
 
 import { iconsDiv, iconStyle } from "./icons.module.css";
+import { Link } from "gatsby";
 
 const Icons = () => {
   const links = {
@@ -19,7 +21,7 @@ const Icons = () => {
         className={iconStyle}
         href={links["github"]}
         target="_blank"
-        rel="nofollow noopener noreferrer"
+        rel="noreferrer"
         aria-label="Github"
       >
         <VscGithub />
@@ -28,7 +30,7 @@ const Icons = () => {
         className={iconStyle}
         href={links["linkedin"]}
         target="_blank"
-        rel="nofollow noopener noreferrer"
+        rel="noreferrer"
         aria-label="LinkedIn"
       >
         <AiOutlineLinkedin />
@@ -37,7 +39,7 @@ const Icons = () => {
         className={iconStyle}
         href={links["email"]}
         target="_blank"
-        rel="nofollow noopener noreferrer"
+        rel="noreferrer"
         aria-label="Email me!"
       >
         <AiOutlineMail />
@@ -46,10 +48,19 @@ const Icons = () => {
         className={iconStyle}
         href={links["soundcloud"]}
         target="_blank"
-        rel="nofollow noopener noreferrer"
+        rel="noreferrer"
         aria-label="Soundcloud"
       >
-        <GrSoundcloud />
+        <PiSoundcloudLogoLight />
+      </a>
+      <a
+        className={iconStyle}
+        href="/resume.pdf"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Resume"
+      >
+        <IoDocumentTextOutline />
       </a>
     </div>
   );
