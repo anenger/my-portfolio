@@ -27,7 +27,6 @@
     "gatsby-transformer-remark": "^6.2.0",
     "gatsby-transformer-sharp": "^5.2.0",
     "node-fetch": "^3.3.2",
-    "react": "^18.2.0",
     "react-icons": "^4.12.0"
   }
 }
