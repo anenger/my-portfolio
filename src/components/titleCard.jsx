@@ -23,18 +23,7 @@ const TitleCard = () => {
         <div className={titleSubHeading}>{subtitle}</div>
         <p className={`${titleDescription}`}>
           I enjoy creating interactive experiences on the web. Currently, I work
-          at Microsoft using technologies such as React, Node, Typescript, and
-          Azure on the{" "}
-          <a
-            href={"https://loop.microsoft.com/learn"}
-            className={hoverUnderlineAnimation}
-            style={{
-              color: "var(--title-text-color)",
-            }}
-          >
-            Microsoft Loop
-          </a>{" "}
-          team.
+          at CLEAR as a frontend engineer.
         </p>
         <Icons />
       </div>
