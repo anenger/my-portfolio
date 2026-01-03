@@ -1,12 +1,11 @@
 ---
 date: "2021-06-30"
 title: "Software Development QA Co-op"
-company: "Wellframe, Inc."
+company: "Wellframe"
 location: "Boston, MA"
 range: "Feb - Jun '21"
 url: "https://www.wellframe.com/"
 ---
 
-- Built and refactored test suites for the application using Selenium Webdriver for Java.
-- Built custom mock data loader using Python, MySQL, and Gitlab CI/CD for testing.
-- Learned HIPAA compliance in technology.
+- Engineered automated end-to-end test suites using Selenium WebDriver (Java) to validate software reliability.
+- Built Python and MySQL-based CI/CD pipelines to pre-load mock healthcare data, accelerating development cycle readiness.

@@ -9,8 +9,7 @@ module.exports = {
   siteMetadata: {
     title: `Andrew Enger`,
     siteUrl: `https://www.anenger.com`,
-    description: `Andrew Enger is a Software Engineer at Microsoft. He enjoys creating interactive experiences on the web.`,
-    twitterUsername: `@securecop`,
+    description: `Andrew Enger is a Software Engineer. He enjoys creating interactive experiences on the web.`,
     image: `/icon.png`,
   },
   plugins: [

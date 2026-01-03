@@ -13,7 +13,15 @@
   font-family: var(--font-family);
   text-shadow: 2px 1px 2px black;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--subtitle-text-color);
+  border-bottom: 1px solid var(--body-text-color);
+}
+
+.about-me-updated {
+  color: var(--subtitle-text-color);
+  font-size: var(--subtitle-text-size);
+  font-weight: var(--subtitle-text-weight);
+  font-family: var(--font-family);
+  padding-bottom: 1rem;
 }
 
 .about-me-flex {
@@ -41,9 +49,9 @@
 
 .about-me-description {
   font-family: var(--font-family);
-  color: var(--subtitle-text-color);
-  font-size: var(--subtitle-text-size);
-  font-weight: var(--subtitle-text-weight);
+  color: var(--body-text-color);
+  font-size: var(--body-text-size);
+  font-weight: var(--body-text-weight);
   padding: 1rem;
   line-height: 2rem;
   max-width: 50vw;

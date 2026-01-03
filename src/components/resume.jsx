@@ -36,11 +36,12 @@ const Resume = () => {
         {jobsData &&
           jobsData.map(({ node }, index) => {
             const { frontmatter, html } = node;
-            const { title, url, company, range } = frontmatter;
+            const { title, url, company, range, location } = frontmatter;
 
             return (
               <ResumeItem
                 index={index}
+                location={location}
                 title={title}
                 url={url}
                 company={company}

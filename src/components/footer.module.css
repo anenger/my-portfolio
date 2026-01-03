@@ -14,7 +14,7 @@
   color: whitesmoke;
   font-size: 16px;
   font-family: var(--font-family);
-  font-weight: var(--subtitle-text-weight);
+  font-weight: var(--body-text-weight);
   text-decoration: none;
 }
 .footer-icon {

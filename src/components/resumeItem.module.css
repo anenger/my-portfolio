@@ -4,7 +4,7 @@
   justify-content: space-between;
   font-family: var(--font-family);
   padding: 0.5rem 0;
-  border-bottom: 1px solid var(--subtitle-text-color);
+  border-bottom: 1px solid var(--body-text-color);
 }
 
 .resume-job-item:last-of-type {
@@ -28,7 +28,7 @@
 }
 
 .resume-job-title {
-  color: var(--subtitle-text-color);
+  color: var(--body-text-color);
   font-family: var(--font-family);
 }
 

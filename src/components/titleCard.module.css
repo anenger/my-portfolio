@@ -43,8 +43,8 @@
 }
 
 .title-description {
-  color: var(--subtitle-text-color);
-  font-size: var(--subtitle-text-size);
+  color: var(--body-text-color);
+  font-size: var(--body-text-size);
   font-family: var(--font-family);
 }
 

@@ -8,9 +8,9 @@
 }
 
 .time-since-p {
-  font-size: var(--subtitle-text-size);
+  font-size: var(--body-text-size);
   font-family: var(--font-family);
-  color: var(--subtitle-text-color);
+  color: var(--body-text-color);
   background-color: transparent;
   margin: 0;
   line-height: 2rem;
