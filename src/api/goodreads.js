@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 
 const GOODREADS_USER_ID = process.env.GOODREADS_USER_ID;
-const GOODREADS_SHELF = process.env.GOODREADS_SHELF || "currently-reading";
+const GOODREADS_SHELF = process.env.GOODREADS_SHELF;
 
 // Simple XML parsing helpers for RSS feeds
 function extractTagContent(xml, tagName) {
