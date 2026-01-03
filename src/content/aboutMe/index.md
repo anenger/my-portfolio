@@ -1,5 +1,5 @@
 ---
-updated: "2022-12-11"
+updated: "2026-01-03"
 ---
 
 My journey into programming started at a young age, tinkering with custom PC builds and making mods for Minecraft. In high school I decided to take a CS course, and eventually I became interested in sneakers and apparel. I was able to write custom scripts to help with checking out and monitoring on some of the biggest retailers in the world.

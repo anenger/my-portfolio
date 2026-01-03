@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
@@ -6,12 +7,15 @@ import {
   galleryDiv,
   galleryHeading,
   galleryFlex,
-  galleryImageDiv,
-  galleryImages,
+  galleryImageContainer,
   galleryImage,
+  galleryImageVisible,
+  galleryImageHidden,
 } from "./gallery.module.css";
 
 const Gallery = ({ title }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const data = useStaticQuery(graphql`
     {
       allFile(
@@ -25,7 +29,7 @@ const Gallery = ({ title }) => {
           node {
             name
             childImageSharp {
-              gatsbyImageData(width: 650, aspectRatio: 1.5, quality: 75)
+              gatsbyImageData(width: 800, aspectRatio: 1.5, quality: 85)
             }
           }
         }
@@ -33,22 +37,35 @@ const Gallery = ({ title }) => {
     }
   `);
 
+  const images = data.allFile.edges;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div className={galleryDiv}>
       <h2 className={galleryHeading}>{title}</h2>
       <div className={galleryFlex}>
-        <div className={galleryImages}>
-          {data.allFile.edges.map((file) => {
-            let image = getImage(file.node);
-            let alt = file.node.name;
+        <div className={galleryImageContainer}>
+          {images.map((file, index) => {
+            const image = getImage(file.node);
+            const alt = file.node.name;
+            const isVisible = index === currentIndex;
+
             return (
-              <div className={galleryImageDiv}>
-                <GatsbyImage
-                  className={galleryImage}
-                  image={image}
-                  alt={alt}
-                ></GatsbyImage>
-              </div>
+              <GatsbyImage
+                key={file.node.name}
+                className={`${galleryImage} ${
+                  isVisible ? galleryImageVisible : galleryImageHidden
+                }`}
+                image={image}
+                alt={alt}
+              />
             );
           })}
         </div>

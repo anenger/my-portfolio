@@ -10,7 +10,7 @@ import {
   resumeJobDescriptionItem,
 } from "./resumeItem.module.css";
 
-const ResumeItem = ({ index, title, url, company, range, html }) => {
+const ResumeItem = ({ index, location, title, url, company, range, html }) => {
   return (
     <div className={resumeJobItem}>
       <div className={resumeJobFlexbox} id={`resume-title-${index}`}>
@@ -22,6 +22,7 @@ const ResumeItem = ({ index, title, url, company, range, html }) => {
         </a>
         <span className={resumeJobTitle}>{title}</span>
         <span className={resumeJobTitle}>{range}</span>
+        <span className={resumeJobTitle}>{location}</span>
       </div>
       <div
         id={`resume-description-${index}`}

@@ -22,8 +22,8 @@
 
 .not-found-paragraph {
   font-family: var(--font-family);
-  color: var(--subtitle-text-color);
-  font-size: var(--subtitle-text-size);
+  color: var(--body-text-color);
+  font-size: var(--body-text-size);
 }
 
 .not-found-link-text {

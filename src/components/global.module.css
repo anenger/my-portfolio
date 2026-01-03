@@ -1,13 +1,16 @@
 :root {
-  --big-text-color: #84a98c;
+  --big-text-color: #8bffa4;
   --big-text-size: 48px;
   --big-text-weight: 700;
   --title-text-color: #ef946c;
   --title-text-size: 32px;
   --title-text-weight: 700;
-  --subtitle-text-color: #cad2c5;
-  --subtitle-text-size: 20px;
-  --subtitle-text-weight: 400;
+  --subtitle-text-color: #a6b39d;
+  --subtitle-text-size: 16px;
+  --subtitle-text-weight: 300;
+  --body-text-color: #cecece;
+  --body-text-size: 20px;
+  --body-text-weight: 400;
   --hover-text-color: #54b3d6;
   --underline-text-color: #0087ca;
   --font-family: "Unbounded", Arial, sans-serif;
