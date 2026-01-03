@@ -10,7 +10,6 @@ import {
   titleImageDiv,
   titleImage,
 } from "./titleCard.module.css";
-import { hoverUnderlineAnimation } from "./global.module.css";
 
 const TitleCard = () => {
   const title = "Hey! I'm Andrew 👋";

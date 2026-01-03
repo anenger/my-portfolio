@@ -4,9 +4,7 @@ import { VscGithub } from "react-icons/vsc";
 import { AiOutlineLinkedin, AiOutlineMail } from "react-icons/ai";
 import { PiSoundcloudLogoLight } from "react-icons/pi";
 import { IoDocumentTextOutline } from "react-icons/io5";
-
 import { iconsDiv, iconStyle } from "./icons.module.css";
-import { Link } from "gatsby";
 
 const Icons = () => {
   const links = {
