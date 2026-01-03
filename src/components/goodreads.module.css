@@ -1,14 +1,14 @@
-.lastfm-container {
+.goodreads-container {
   display: flex;
   justify-content: center;
   padding: 1rem;
 }
 
-.lastfm-card {
+.goodreads-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%);
+  background: linear-gradient(145deg, #2c2416 0%, #1a150d 100%);
   border-radius: 16px;
   padding: 1.75rem;
   text-decoration: none;
@@ -20,18 +20,18 @@
   width: 100%;
 }
 
-.lastfm-card:hover {
+.goodreads-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(211, 47, 47, 0.2);
+  box-shadow: 0 12px 40px rgba(136, 103, 62, 0.2);
 }
 
-.lastfm-logo {
+.goodreads-logo {
   width: 18px;
   height: 18px;
-  color: #d32f2f;
+  color: #88673e;
 }
 
-.lastfm-badge {
+.goodreads-badge {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -40,14 +40,14 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #d32f2f;
-  background: rgba(211, 47, 47, 0.15);
+  color: #88673e;
+  background: rgba(136, 103, 62, 0.15);
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   margin-bottom: 1rem;
 }
 
-.album-container {
+.cover-container {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -55,15 +55,16 @@
   margin-bottom: 1rem;
 }
 
-.album-image {
-  width: 200px;
+.cover-image {
   height: 200px;
+  width: auto;
+  aspect-ratio: 2/3;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 4px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
-.track-info {
+.book-info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,18 +72,34 @@
   gap: 0.25rem;
 }
 
-.track-title {
+.book-title {
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
-  color: #ffffff;
+  color: #f5f1eb;
   line-height: 1.3;
 }
 
-.track-artist {
+.book-author {
   font-family: var(--font-family);
+  font-size: 13px;
+  color: #a99b86;
+}
+
+.rating-container {
+  display: flex;
+  gap: 2px;
+  margin-top: 0.25rem;
+}
+
+.star-filled {
+  color: #f4c430;
   font-size: 14px;
-  color: #b3b3b3;
+}
+
+.star-empty {
+  color: #4a3f2f;
+  font-size: 14px;
 }
 
 .loading-state,
@@ -92,37 +109,41 @@
   align-items: center;
   gap: 0.75rem;
   padding: 2rem;
-  color: #b3b3b3;
+  color: #a99b86;
   font-family: var(--font-family);
   font-size: 14px;
 }
 
-.loading-state .lastfm-logo,
-.error-state .lastfm-logo {
+.loading-state .goodreads-logo,
+.error-state .goodreads-logo {
   width: 40px;
   height: 40px;
 }
 
 @media screen and (max-width: 800px) {
-  .lastfm-container {
+  .goodreads-container {
     padding: 0.5rem;
   }
 
-  .lastfm-card {
+  .goodreads-card {
     padding: 1rem;
     max-width: 100%;
   }
 
-  .album-image {
-    width: 150px;
+  .cover-image {
     height: 150px;
   }
 
-  .track-title {
+  .book-title {
     font-size: 14px;
   }
 
-  .track-artist {
+  .book-author {
+    font-size: 12px;
+  }
+
+  .star-filled,
+  .star-empty {
     font-size: 12px;
   }
 }

@@ -8,7 +8,7 @@ const getTimeSince = (startTime) => {
   return Math.floor(timeSince / 1000);
 };
 
-const TimeSince = () => {
+export const TimeSince = () => {
   const [timeSince, setTimeSince] = useState(0);
 
   useEffect(() => {
@@ -25,5 +25,3 @@ const TimeSince = () => {
     </div>
   );
 };
-
-export default TimeSince;

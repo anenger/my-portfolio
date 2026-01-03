@@ -3,9 +3,9 @@ import * as React from "react";
 import { footer, footerDiv, footerLink, footerIcon } from "./footer.module.css";
 import { hoverUnderlineAnimation } from "./global.module.css";
 import { GrGatsbyjs } from "react-icons/gr";
-import DeploymentStatus from "./deploymentStatus";
+import { DeploymentStatus } from "./deploymentStatus";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className={footer}>
       <div className={footerDiv}>
@@ -23,5 +23,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

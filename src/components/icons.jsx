@@ -5,7 +5,7 @@ import { AiOutlineLinkedin, AiOutlineMail } from "react-icons/ai";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { iconsDiv, iconStyle } from "./icons.module.css";
 
-const Icons = () => {
+export const Icons = () => {
   const links = {
     github: "https://github.com/anenger",
     linkedin: "https://www.linkedin.com/in/andrew-enger/",
@@ -52,5 +52,3 @@ const Icons = () => {
     </div>
   );
 };
-
-export default Icons;

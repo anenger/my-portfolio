@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
-import Icons from "./icons";
+import { Icons } from "./icons";
 import {
   titleDiv,
   titleText,
@@ -11,7 +11,7 @@ import {
   titleImage,
 } from "./titleCard.module.css";
 
-const TitleCard = () => {
+export const TitleCard = () => {
   const title = "Hey! I'm Andrew 👋";
   const subtitle = "I'm a full-stack Software Engineer";
 
@@ -36,5 +36,3 @@ const TitleCard = () => {
     </div>
   );
 };
-
-export default TitleCard;

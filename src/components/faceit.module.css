@@ -1,0 +1,247 @@
+.faceit-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.faceit-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%);
+  border-radius: 16px;
+  padding: 1.75rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  max-width: 300px;
+  min-height: 380px;
+  width: 100%;
+}
+
+.faceit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(255, 85, 0, 0.2);
+}
+
+.faceit-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.faceit-badge {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #ff5500;
+  background: rgba(255, 85, 0, 0.15);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+.game-tag {
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 600;
+  color: #b3b3b3;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.avatar-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.avatar-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.skill-level-badge {
+  position: absolute;
+  bottom: -8px;
+  right: calc(50% - 70px - 8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 900;
+  color: #ffffff;
+  border: 2px solid #0d0d0d;
+  transition: transform 0.2s ease;
+}
+
+.faceit-card:hover .skill-level-badge {
+  transform: scale(1.1);
+}
+
+.elo-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.elo-value {
+  font-family: var(--font-family);
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.elo-label {
+  font-family: var(--font-family);
+  font-size: 11px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.player-name {
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.recent-match-section {
+  width: 100%;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.match-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.match-win,
+.match-loss {
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.match-win {
+  color: #4caf50;
+  background: rgba(76, 175, 80, 0.15);
+}
+
+.match-loss {
+  color: #ee4b2b;
+  background: rgba(238, 75, 43, 0.15);
+}
+
+.match-score {
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.match-stats {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.stat-label {
+  font-family: var(--font-family);
+  font-size: 10px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.loading-state,
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  color: #b3b3b3;
+  font-family: var(--font-family);
+  font-size: 14px;
+}
+
+@media screen and (max-width: 800px) {
+  .faceit-container {
+    padding: 0.5rem;
+  }
+
+  .faceit-card {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .avatar-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .skill-level-badge {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    right: calc(50% - 50px - 6px);
+  }
+
+  .elo-value {
+    font-size: 24px;
+  }
+
+  .match-stats {
+    gap: 1rem;
+  }
+
+  .stat-value {
+    font-size: 14px;
+  }
+}

@@ -16,5 +16,9 @@ export default async function handler(req, res) {
     .catch(() => {
       return { error: "Whoops! Something went wrong with Last.fm" };
     });
+
+  // Add profile URL to response
+  result.profileUrl = `https://www.last.fm/user/${username}`;
+
   res.json(result);
 }

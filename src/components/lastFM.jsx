@@ -1,41 +1,57 @@
 import * as React from "react";
-import { useWidth } from "../hooks/useWidth";
+import { SiLastdotfm } from "react-icons/si";
 
 import {
-  lastFmDiv,
-  lastFmText,
-  lastFmImageDiv,
-  lastFmImage,
+  lastfmContainer,
+  lastfmCard,
+  lastfmBadge,
+  lastfmLogo,
+  albumContainer,
+  albumImage,
+  trackInfo,
+  trackTitle,
+  trackArtist,
+  loadingState,
+  errorState,
 } from "./lastFM.module.css";
 
-const LastFM = () => {
+export const LastFM = () => {
   const [scrobbleData, setScrobbleData] = React.useState({});
-  const width = useWidth();
-  const isMobile = width < 800;
+  const [loading, setLoading] = React.useState(true);
+
   React.useEffect(() => {
     fetch("/api/lastFM")
-      .then((response) => {
-        return response.json();
+      .then((response) => response.json())
+      .then((data) => {
+        setScrobbleData(data);
+        setLoading(false);
       })
-      .then((data) => setScrobbleData(data));
+      .catch(() => {
+        setScrobbleData({ error: "Could not load Last.fm data" });
+        setLoading(false);
+      });
   }, []);
 
-  const { error } = scrobbleData;
-  const track = scrobbleData?.recenttracks?.track;
-
-  if (!track && !error) {
+  if (loading) {
     return (
-      <div className={lastFmDiv}>
-        <div className={lastFmText}>
-          <p>Loading LastFM data...</p>
+      <div className={lastfmContainer}>
+        <div className={`${lastfmCard} ${loadingState}`}>
+          <SiLastdotfm className={lastfmLogo} />
+          <p>Loading Last.fm...</p>
         </div>
       </div>
     );
-  } else if (error) {
+  }
+
+  const { error, profileUrl } = scrobbleData;
+  const track = scrobbleData?.recenttracks?.track;
+
+  if (error || !track) {
     return (
-      <div className={lastFmDiv}>
-        <div className={lastFmText}>
-          <p>{error}</p>
+      <div className={lastfmContainer}>
+        <div className={`${lastfmCard} ${errorState}`}>
+          <SiLastdotfm className={lastfmLogo} />
+          <p>{error || "No recent tracks"}</p>
         </div>
       </div>
     );
@@ -46,28 +62,41 @@ const LastFM = () => {
       name: songName,
       artist: { "#text": artistName },
       image: albumData,
+      "@attr": nowPlayingAttr,
     },
   ] = track;
 
-  const smallAlbum = albumData[2]["#text"];
+  const isNowPlaying = nowPlayingAttr?.nowplaying === "true";
   const albumArt = albumData.slice(-1)[0]["#text"];
 
   return (
-    <div className={lastFmDiv}>
-      <div className={lastFmImageDiv}>
-        <img
-          className={lastFmImage}
-          src={isMobile ? smallAlbum : albumArt}
-          alt={"Album art for current song"}
-        ></img>
-      </div>
-      <div className={lastFmText}>
-        <p>
-          {"Listening to:"} <br /> {`${songName} by ${artistName}`}
-        </p>
-      </div>
+    <div className={lastfmContainer}>
+      <a
+        href={profileUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={lastfmCard}
+      >
+        <span className={lastfmBadge}>
+          <SiLastdotfm className={lastfmLogo} />
+          {isNowPlaying ? "Now Playing" : "Last Played"}
+        </span>
+
+        {albumArt && (
+          <div className={albumContainer}>
+            <img
+              className={albumImage}
+              src={albumArt}
+              alt={`Album art for ${songName}`}
+            />
+          </div>
+        )}
+
+        <div className={trackInfo}>
+          <span className={trackTitle}>{songName}</span>
+          <span className={trackArtist}>{artistName}</span>
+        </div>
+      </a>
     </div>
   );
 };
-
-export default LastFM;

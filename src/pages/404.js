@@ -1,6 +1,6 @@
 import * as React from "react";
-import NotFound from "../components/notFound";
-import SeoItem from "../components/seo";
+import { NotFoundPage as NotFound } from "../components/notFound";
+import { SeoItem } from "../components/seo";
 
 const NotFoundPage = () => {
   return <NotFound></NotFound>;

@@ -13,7 +13,7 @@ import {
 } from "./deploymentStatus.module.css";
 import { hoverUnderlineAnimation } from "./global.module.css";
 
-const DeploymentStatus = () => {
+export const DeploymentStatus = () => {
   const [deployData, setDeployData] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
 
@@ -110,6 +110,4 @@ const DeploymentStatus = () => {
     </div>
   );
 };
-
-export default DeploymentStatus;
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { useSiteMetadata } from "../hooks/useSiteMetadata";
 
-const SeoItem = ({ title, description, pathname, children }) => {
+export const SeoItem = ({ title, description, pathname, children }) => {
   const {
     title: defaultTitle,
     description: defaultDescription,
@@ -33,5 +33,3 @@ const SeoItem = ({ title, description, pathname, children }) => {
     </>
   );
 };
-
-export default SeoItem;

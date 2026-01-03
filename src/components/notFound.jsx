@@ -9,7 +9,7 @@ import {
 } from "./notFound.module.css";
 import { hoverUnderlineAnimation } from "./global.module.css";
 
-const NotFoundPage = () => {
+export const NotFoundPage = () => {
   return (
     <div className={notFoundDiv}>
       <span className={notFoundHeading}>Page not found</span>
@@ -28,5 +28,3 @@ const NotFoundPage = () => {
     </div>
   );
 };
-
-export default NotFoundPage;

@@ -19,7 +19,7 @@ import {
   galleryArrowRight,
 } from "./gallery.module.css";
 
-const Gallery = ({ title }) => {
+export const Gallery = ({ title }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [resetKey, setResetKey] = useState(0);
 
@@ -109,5 +109,3 @@ const Gallery = ({ title }) => {
     </div>
   );
 };
-
-export default Gallery;

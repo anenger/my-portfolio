@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import ResumeItem from "./resumeItem";
+import { ResumeItem } from "./resumeItem";
 
 import { resumeDiv, resumeHeader, resumeJobList } from "./resume.module.css";
 
-const Resume = () => {
+export const Resume = () => {
   const data = useStaticQuery(graphql`
     query {
       jobs: allMarkdownRemark(
@@ -54,5 +54,3 @@ const Resume = () => {
     </div>
   );
 };
-
-export default Resume;

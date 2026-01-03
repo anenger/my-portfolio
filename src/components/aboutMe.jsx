@@ -1,12 +1,10 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import LastFM from "./lastFM";
-import TimeSince from "./timeSince";
+import { TimeSince } from "./timeSince";
 
 import {
   aboutMeDiv,
   aboutMeTitle,
-  aboutMeFlex,
   aboutMeTextFlex,
   aboutMeDescription,
   aboutMeUpdated,
@@ -27,7 +25,7 @@ const getRelativeTime = (dateString) => {
   return rtf.format(-Math.round(diffDays / 365), "year");
 };
 
-const AboutMe = ({ title }) => {
+export const AboutMe = ({ title }) => {
   const data = useStaticQuery(graphql`
     query {
       aboutMe: markdownRemark(
@@ -49,18 +47,13 @@ const AboutMe = ({ title }) => {
     <div className={aboutMeDiv}>
       <h2 className={aboutMeTitle}>{title}</h2>
       <span className={aboutMeUpdated}>Last updated: {relativeTime}</span>
-      <div className={aboutMeFlex}>
-        <div className={aboutMeTextFlex}>
-          <div
-            className={aboutMeDescription}
-            dangerouslySetInnerHTML={{ __html: html }}
-          ></div>
-          <TimeSince />
-        </div>
-        <LastFM />
+      <div className={aboutMeTextFlex}>
+        <div
+          className={aboutMeDescription}
+          dangerouslySetInnerHTML={{ __html: html }}
+        ></div>
+        <TimeSince />
       </div>
     </div>
   );
 };
-
-export default AboutMe;
