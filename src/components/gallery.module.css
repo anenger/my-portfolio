@@ -27,19 +27,26 @@
 .gallery-image-container {
   position: relative;
   width: 100%;
-  max-width: 800px;
-  aspect-ratio: 1.5;
+  max-width: 1000px;
 }
 
 .gallery-image {
+  width: 100%;
+  filter: drop-shadow(5px 5px 4px black);
+  transition: opacity 1s ease-in-out;
+}
+
+/* First image stays in flow to establish container height */
+.gallery-image-base {
+  position: relative;
+}
+
+/* Other images are positioned absolutely on top */
+.gallery-image-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
-  object-fit: cover;
-  filter: drop-shadow(5px 5px 4px black);
-  transition: opacity 1s ease-in-out;
 }
 
 .gallery-image-visible {

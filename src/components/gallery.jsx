@@ -9,6 +9,8 @@ import {
   galleryFlex,
   galleryImageContainer,
   galleryImage,
+  galleryImageBase,
+  galleryImageOverlay,
   galleryImageVisible,
   galleryImageHidden,
 } from "./gallery.module.css";
@@ -29,7 +31,7 @@ const Gallery = ({ title }) => {
           node {
             name
             childImageSharp {
-              gatsbyImageData(width: 800, aspectRatio: 1.5, quality: 85)
+              gatsbyImageData(width: 1000, quality: 85)
             }
           }
         }
@@ -56,13 +58,14 @@ const Gallery = ({ title }) => {
             const image = getImage(file.node);
             const alt = file.node.name;
             const isVisible = index === currentIndex;
+            const isFirst = index === 0;
 
             return (
               <GatsbyImage
                 key={file.node.name}
                 className={`${galleryImage} ${
-                  isVisible ? galleryImageVisible : galleryImageHidden
-                }`}
+                  isFirst ? galleryImageBase : galleryImageOverlay
+                } ${isVisible ? galleryImageVisible : galleryImageHidden}`}
                 image={image}
                 alt={alt}
               />
