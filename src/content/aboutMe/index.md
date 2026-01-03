@@ -2,6 +2,4 @@
 updated: "2026-01-03"
 ---
 
-My journey into programming started at a young age, tinkering with custom PC builds and making mods for Minecraft. In high school I decided to take a CS course, and eventually I became interested in sneakers and apparel. I was able to write custom scripts to help with checking out and monitoring on some of the biggest retailers in the world.
-
-Over the years, I've had the pleasure of working at a digital health startup, a travel aggregator, and a luxury consignment company. Outside of work, you can probably find me researching espresso techniques, working out, taking film photos, skiing, or playing EA FC 24.
+Andrew Enger is a New York-based Full-stack Software Engineer currently driving technical innovation at CLEAR. With a robust background that includes impactful tenure at Microsoft and successful entrepreneurial ventures, Andrew specializes in scalable system architecture, web optimization, and AI tooling integration. His track record demonstrates a consistent ability to deliver high-performance solutions, from re-architecting CI/CD workflows to leading nationwide infrastructure rollouts. When he isn't coding, Andrew can be found competing in Counter-Strike, reading, cooking, or playing tennis.
