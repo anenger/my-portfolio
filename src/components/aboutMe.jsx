@@ -13,10 +13,11 @@ import {
 } from "./aboutMe.module.css";
 
 const getRelativeTime = (dateString) => {
-  const date = new Date(dateString);
+  // Append T00:00:00 to parse as local midnight instead of UTC midnight
+  const date = new Date(dateString + "T00:00:00");
   const now = new Date();
   const diffMs = now - date;
-  const diffDays = Math.round(diffMs / (1000 * 60 * 60 * 24));
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
 
   const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
 
