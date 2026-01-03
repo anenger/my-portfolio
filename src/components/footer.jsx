@@ -3,6 +3,7 @@ import * as React from "react";
 import { footer, footerDiv, footerLink, footerIcon } from "./footer.module.css";
 import { hoverUnderlineAnimation } from "./global.module.css";
 import { GrGatsbyjs } from "react-icons/gr";
+import DeploymentStatus from "./deploymentStatus";
 
 const Footer = () => {
   return (
@@ -18,6 +19,7 @@ const Footer = () => {
         </a>
         <GrGatsbyjs className={footerIcon} />
       </div>
+      <DeploymentStatus />
     </footer>
   );
 };
