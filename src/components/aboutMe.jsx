@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { TimeSince } from "./timeSince";
 
 import {
   aboutMeDiv,
@@ -52,7 +51,6 @@ export const AboutMe = ({ title }) => {
           className={aboutMeDescription}
           dangerouslySetInnerHTML={{ __html: html }}
         ></div>
-        <TimeSince />
       </div>
     </div>
   );

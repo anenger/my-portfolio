@@ -2,6 +2,9 @@
   display: flex;
   justify-content: center;
   padding: 1rem;
+  flex-shrink: 0;
+  width: 280px;
+  scroll-snap-align: center;
 }
 
 .lastfm-card {
@@ -12,8 +15,7 @@
   border-radius: 16px;
   padding: 1.75rem;
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
   border: 1px solid rgba(255, 255, 255, 0.05);
   max-width: 300px;
   min-height: 380px;
@@ -22,7 +24,6 @@
 
 .lastfm-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(211, 47, 47, 0.2);
 }
 
 .lastfm-logo {
@@ -59,8 +60,8 @@
   width: 200px;
   height: 200px;
   object-fit: cover;
+  aspect-ratio: 2/3;
   border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
 .track-info {
@@ -106,6 +107,7 @@
 @media screen and (max-width: 800px) {
   .lastfm-container {
     padding: 0.5rem;
+    width: 260px;
   }
 
   .lastfm-card {
