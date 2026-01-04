@@ -58,11 +58,11 @@ export const Faceit = () => {
     );
   }
 
-  if (error || !data) {
+  if (error || !data || data.error) {
     return (
       <div className={faceitContainer}>
         <div className={`${faceitCard} ${errorState}`}>
-          <p>{error || "Could not load FaceIT data"}</p>
+          <p>{error?.message || data?.error || "Could not load FaceIT data"}</p>
         </div>
       </div>
     );

@@ -33,12 +33,12 @@ export const Letterboxd = () => {
     );
   }
 
-  if (error || !data) {
+  if (error || !data || data.error) {
     return (
       <div className={letterboxdContainer}>
         <div className={`${letterboxdCard} ${errorState}`}>
           <SiLetterboxd className={letterboxdLogo} />
-          <p>{error || "Could not load Letterboxd data"}</p>
+          <p>{error?.message || data?.error || "Could not load Letterboxd data"}</p>
         </div>
       </div>
     );

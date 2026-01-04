@@ -33,12 +33,14 @@ export const Goodreads = () => {
     );
   }
 
-  if (error || !data) {
+  if (error || !data || data.error) {
     return (
       <div className={goodreadsContainer}>
         <div className={`${goodreadsCard} ${errorState}`}>
           <FaGoodreads className={goodreadsLogo} />
-          <p>{error || "Could not load Goodreads data"}</p>
+          <p>
+            {error?.message || data?.error || "Could not load Goodreads data"}
+          </p>
         </div>
       </div>
     );

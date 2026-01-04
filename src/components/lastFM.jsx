@@ -33,19 +33,20 @@ export const LastFM = () => {
     );
   }
 
-  const { profileUrl } = data;
   const track = data?.recenttracks?.track;
 
-  if (error || !track) {
+  if (error || !data || data.error || !track) {
     return (
       <div className={lastfmContainer}>
         <div className={`${lastfmCard} ${errorState}`}>
           <SiLastdotfm className={lastfmLogo} />
-          <p>{error || "No recent tracks"}</p>
+          <p>{error?.message || data?.error || "No recent tracks"}</p>
         </div>
       </div>
     );
   }
+
+  const { profileUrl } = data;
 
   const [
     {

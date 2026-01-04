@@ -29,7 +29,7 @@ export const DeploymentStatus = () => {
     );
   }
 
-  if (error || !data) {
+  if (error || !data || data.error) {
     return null; // Silently fail if we can't get deployment info
   }
 
