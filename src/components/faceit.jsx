@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useQuery } from "@tanstack/react-query";
 
 import {
   faceitContainer,
@@ -42,23 +43,12 @@ const SKILL_COLORS = {
 };
 
 export const Faceit = () => {
-  const [faceitData, setFaceitData] = React.useState(null);
-  const [loading, setLoading] = React.useState(true);
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["faceit"],
+    queryFn: () => fetch("/api/faceit").then((res) => res.json()),
+  });
 
-  React.useEffect(() => {
-    fetch("/api/faceit")
-      .then((response) => response.json())
-      .then((data) => {
-        setFaceitData(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setFaceitData({ error: "Could not load FaceIT data" });
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <div className={faceitContainer}>
         <div className={`${faceitCard} ${loadingState}`}>
@@ -68,11 +58,11 @@ export const Faceit = () => {
     );
   }
 
-  if (faceitData?.error && !faceitData?.nickname) {
+  if (error || !data) {
     return (
       <div className={faceitContainer}>
         <div className={`${faceitCard} ${errorState}`}>
-          <p>{faceitData.error}</p>
+          <p>{error || "Could not load FaceIT data"}</p>
         </div>
       </div>
     );
@@ -86,7 +76,7 @@ export const Faceit = () => {
     faceitUrl,
     avatar,
     recentMatch,
-  } = faceitData;
+  } = data;
   const skillColor = SKILL_COLORS[level] || "#666";
 
   return (

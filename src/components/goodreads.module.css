@@ -86,22 +86,6 @@
   color: #a99b86;
 }
 
-.rating-container {
-  display: flex;
-  gap: 2px;
-  margin-top: 0.25rem;
-}
-
-.star-filled {
-  color: #f4c430;
-  font-size: 14px;
-}
-
-.star-empty {
-  color: #4a3f2f;
-  font-size: 14px;
-}
-
 .loading-state,
 .error-state {
   display: flex;
@@ -136,11 +120,6 @@
   }
 
   .book-author {
-    font-size: 12px;
-  }
-
-  .star-filled,
-  .star-empty {
     font-size: 12px;
   }
 }

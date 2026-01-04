@@ -11,46 +11,18 @@ import {
   bookInfo,
   bookTitle,
   bookAuthor,
-  ratingContainer,
-  starFilled,
-  starEmpty,
   loadingState,
   errorState,
 } from "./goodreads.module.css";
-
-const StarRating = ({ rating }) => {
-  if (!rating) return null;
-
-  const stars = [];
-  for (let i = 1; i <= 5; i++) {
-    stars.push(
-      <span key={i} className={i <= rating ? starFilled : starEmpty}>
-        ★
-      </span>
-    );
-  }
-
-  return <div className={ratingContainer}>{stars}</div>;
-};
+import { useQuery } from "@tanstack/react-query";
 
 export const Goodreads = () => {
-  const [bookData, setBookData] = React.useState(null);
-  const [loading, setLoading] = React.useState(true);
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["goodreads"],
+    queryFn: () => fetch("/api/goodreads").then((res) => res.json()),
+  });
 
-  React.useEffect(() => {
-    fetch("/api/goodreads")
-      .then((response) => response.json())
-      .then((data) => {
-        setBookData(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setBookData({ error: "Could not load Goodreads data" });
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <div className={goodreadsContainer}>
         <div className={`${goodreadsCard} ${loadingState}`}>
@@ -61,18 +33,18 @@ export const Goodreads = () => {
     );
   }
 
-  if (bookData?.error) {
+  if (error || !data) {
     return (
       <div className={goodreadsContainer}>
         <div className={`${goodreadsCard} ${errorState}`}>
           <FaGoodreads className={goodreadsLogo} />
-          <p>{bookData.error}</p>
+          <p>{error || "Could not load Goodreads data"}</p>
         </div>
       </div>
     );
   }
 
-  const { title, author, coverUrl, rating, profileUrl, shelf } = bookData;
+  const { title, author, coverUrl, profileUrl, shelf } = data;
   const isCurrentlyReading = shelf === "currently-reading";
 
   return (
@@ -101,7 +73,6 @@ export const Goodreads = () => {
         <div className={bookInfo}>
           <span className={bookTitle}>{title}</span>
           {author && <span className={bookAuthor}>by {author}</span>}
-          <StarRating rating={rating} />
         </div>
       </a>
     </div>

@@ -14,25 +14,15 @@ import {
   loadingState,
   errorState,
 } from "./letterboxd.module.css";
+import { useQuery } from "@tanstack/react-query";
 
 export const Letterboxd = () => {
-  const [filmData, setFilmData] = React.useState(null);
-  const [loading, setLoading] = React.useState(true);
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["letterboxd"],
+    queryFn: () => fetch("/api/letterboxd").then((res) => res.json()),
+  });
 
-  React.useEffect(() => {
-    fetch("/api/letterboxd")
-      .then((response) => response.json())
-      .then((data) => {
-        setFilmData(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setFilmData({ error: "Could not load Letterboxd data" });
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <div className={letterboxdContainer}>
         <div className={`${letterboxdCard} ${loadingState}`}>
@@ -43,18 +33,18 @@ export const Letterboxd = () => {
     );
   }
 
-  if (filmData?.error) {
+  if (error || !data) {
     return (
       <div className={letterboxdContainer}>
         <div className={`${letterboxdCard} ${errorState}`}>
           <SiLetterboxd className={letterboxdLogo} />
-          <p>{filmData.error}</p>
+          <p>{error || "Could not load Letterboxd data"}</p>
         </div>
       </div>
     );
   }
 
-  const { title, year, posterUrl, profileUrl } = filmData;
+  const { title, year, posterUrl, profileUrl } = data;
 
   return (
     <div className={letterboxdContainer}>

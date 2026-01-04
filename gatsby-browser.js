@@ -1,11 +1,6 @@
 import * as React from "react";
 import { RootElement } from "./src/components/rootElement";
 
-// Adds lang attribute to the body element
-export function onRenderBody({ setHtmlAttributes }) {
-  setHtmlAttributes({ lang: "en" });
-}
-
 export const wrapRootElement = ({ element }) => {
   return <RootElement>{element}</RootElement>;
 };

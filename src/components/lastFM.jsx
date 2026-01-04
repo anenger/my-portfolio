@@ -1,5 +1,6 @@
 import * as React from "react";
 import { SiLastdotfm } from "react-icons/si";
+import { useQuery } from "@tanstack/react-query";
 
 import {
   lastfmContainer,
@@ -16,23 +17,12 @@ import {
 } from "./lastFM.module.css";
 
 export const LastFM = () => {
-  const [scrobbleData, setScrobbleData] = React.useState({});
-  const [loading, setLoading] = React.useState(true);
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["lastFM"],
+    queryFn: () => fetch("/api/lastFM").then((res) => res.json()),
+  });
 
-  React.useEffect(() => {
-    fetch("/api/lastFM")
-      .then((response) => response.json())
-      .then((data) => {
-        setScrobbleData(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setScrobbleData({ error: "Could not load Last.fm data" });
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <div className={lastfmContainer}>
         <div className={`${lastfmCard} ${loadingState}`}>
@@ -43,8 +33,8 @@ export const LastFM = () => {
     );
   }
 
-  const { error, profileUrl } = scrobbleData;
-  const track = scrobbleData?.recenttracks?.track;
+  const { profileUrl } = data;
+  const track = data?.recenttracks?.track;
 
   if (error || !track) {
     return (
