@@ -11,38 +11,9 @@ import {
   filmInfo,
   filmTitle,
   filmYear,
-  ratingContainer,
-  starFilled,
-  starHalf,
   loadingState,
   errorState,
 } from "./letterboxd.module.css";
-
-const StarRating = ({ rating }) => {
-  if (!rating) return null;
-
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 !== 0;
-  const stars = [];
-
-  for (let i = 0; i < fullStars; i++) {
-    stars.push(
-      <span key={i} className={starFilled}>
-        ★
-      </span>
-    );
-  }
-
-  if (hasHalfStar) {
-    stars.push(
-      <span key="half" className={starHalf}>
-        ★
-      </span>
-    );
-  }
-
-  return <div className={ratingContainer}>{stars}</div>;
-};
 
 export const Letterboxd = () => {
   const [filmData, setFilmData] = React.useState(null);
@@ -83,7 +54,7 @@ export const Letterboxd = () => {
     );
   }
 
-  const { title, year, posterUrl, rating, profileUrl } = filmData;
+  const { title, year, posterUrl, profileUrl } = filmData;
 
   return (
     <div className={letterboxdContainer}>
@@ -111,7 +82,6 @@ export const Letterboxd = () => {
         <div className={filmInfo}>
           <span className={filmTitle}>{title}</span>
           {year && <span className={filmYear}>{year}</span>}
-          <StarRating rating={rating} />
         </div>
       </a>
     </div>

@@ -37,7 +37,6 @@ function cleanUrl(url) {
 
 function parseRSSItem(itemXml) {
   const title = extractCDATA(extractTagContent(itemXml, "title"));
-  const link = extractTagContent(itemXml, "link");
   const description = extractCDATA(extractTagContent(itemXml, "description"));
 
   // Extract author from author_name tag if present
@@ -66,7 +65,6 @@ function parseRSSItem(itemXml) {
   return {
     title,
     author: authorName,
-    link,
     coverUrl,
     rating: userRating && userRating !== "0" ? parseInt(userRating, 10) : null,
   };
@@ -109,7 +107,6 @@ export default async function handler(req, res) {
       author: recentBook.author,
       coverUrl: recentBook.coverUrl,
       rating: recentBook.rating,
-      link: recentBook.link,
       shelf: GOODREADS_SHELF,
       profileUrl: `https://www.goodreads.com/user/show/${GOODREADS_USER_ID}`,
     });

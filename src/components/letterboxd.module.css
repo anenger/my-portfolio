@@ -2,6 +2,9 @@
   display: flex;
   justify-content: center;
   padding: 1rem;
+  flex-shrink: 0;
+  width: 280px;
+  scroll-snap-align: center;
 }
 
 .letterboxd-card {
@@ -12,8 +15,7 @@
   border-radius: 16px;
   padding: 1.75rem;
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
   border: 1px solid rgba(255, 255, 255, 0.05);
   max-width: 300px;
   min-height: 380px;
@@ -22,7 +24,6 @@
 
 .letterboxd-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 210, 106, 0.15);
 }
 
 .letterboxd-logo {
@@ -61,7 +62,6 @@
   aspect-ratio: 2/3;
   object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
 .film-info {
@@ -86,23 +86,6 @@
   color: #7a8c99;
 }
 
-.rating-container {
-  display: flex;
-  gap: 2px;
-  margin-top: 0.25rem;
-}
-
-.star-filled {
-  color: #00d26a;
-  font-size: 16px;
-}
-
-.star-half {
-  color: #00d26a;
-  font-size: 16px;
-  opacity: 0.5;
-}
-
 .loading-state,
 .error-state {
   display: flex;
@@ -124,15 +107,12 @@
 @media screen and (max-width: 800px) {
   .letterboxd-container {
     padding: 0.5rem;
+    width: 260px;
   }
 
   .letterboxd-card {
     padding: 1rem;
     max-width: 100%;
-  }
-
-  .poster-image {
-    height: 150px;
   }
 
   .film-title {
@@ -141,10 +121,5 @@
 
   .film-year {
     font-size: 12px;
-  }
-
-  .star-filled,
-  .star-half {
-    font-size: 14px;
   }
 }

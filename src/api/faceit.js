@@ -65,16 +65,10 @@ async function getRecentMatchStats(playerId, gameId) {
     const isWin = teamScore > opponentScore;
 
     return {
-      matchId,
       isWin,
       score: `${teamScore}-${opponentScore}`,
-      map: rounds.round_stats?.Map || recentMatch.competition_name,
-      kills: parseInt(playerStats.Kills || "0"),
-      deaths: parseInt(playerStats.Deaths || "0"),
-      assists: parseInt(playerStats.Assists || "0"),
       kd: parseFloat(playerStats["K/D Ratio"] || "0").toFixed(2),
       adr: parseFloat(playerStats.ADR || "0").toFixed(1),
-      headshots: playerStats["Headshots %"],
     };
   } catch (error) {
     console.error("Error fetching match stats:", error);
@@ -106,7 +100,6 @@ export default async function handler(req, res) {
       return res.json({
         nickname: playerData.nickname,
         avatar: playerData.avatar,
-        country: playerData.country,
         error: "No Counter-Strike data found",
       });
     }
@@ -117,12 +110,10 @@ export default async function handler(req, res) {
     res.json({
       nickname: playerData.nickname,
       avatar: playerData.avatar,
-      country: playerData.country,
       faceitUrl: playerData.faceit_url?.replace("{lang}", "en"),
       game: gameName,
       skillLevel: gameData.skill_level,
       elo: gameData.faceit_elo,
-      region: gameData.region,
       recentMatch,
     });
   } catch (error) {

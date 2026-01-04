@@ -49,15 +49,8 @@ export default async function handler(req, res) {
 
     res.json({
       status,
-      state: latestDeploy.state,
       commitRef: latestDeploy.commit_ref,
-      commitMessage: latestDeploy.title || latestDeploy.commit_message,
       branch: latestDeploy.branch,
-      deployId: latestDeploy.id,
-      createdAt: latestDeploy.created_at,
-      publishedAt: latestDeploy.published_at,
-      deployUrl: latestDeploy.deploy_ssl_url,
-      adminUrl: latestDeploy.admin_url,
     });
   } catch (error) {
     res.json({
