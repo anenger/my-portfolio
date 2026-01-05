@@ -12,24 +12,15 @@ import {
   pulseAnimation,
 } from "./deploymentStatus.module.css";
 import { hoverUnderlineAnimation } from "./global.module.css";
+import { useQuery } from "@tanstack/react-query";
 
 export const DeploymentStatus = () => {
-  const [deployData, setDeployData] = React.useState(null);
-  const [loading, setLoading] = React.useState(true);
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["deploymentStatus"],
+    queryFn: () => fetch("/api/netlify").then((res) => res.json()),
+  });
 
-  React.useEffect(() => {
-    fetch("/api/netlify")
-      .then((response) => response.json())
-      .then((data) => {
-        setDeployData(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <div className={statusContainer}>
         <span className={`${statusLight} ${statusLightPending}`}></span>
@@ -38,11 +29,11 @@ export const DeploymentStatus = () => {
     );
   }
 
-  if (!deployData || deployData.error) {
+  if (error || !data || data.error) {
     return null; // Silently fail if we can't get deployment info
   }
 
-  const { status, commitRef, branch } = deployData;
+  const { status, commitRef, branch } = data;
   const shortCommit = commitRef ? commitRef.substring(0, 7) : "unknown";
 
   // Determine the light color class based on status
@@ -110,4 +101,3 @@ export const DeploymentStatus = () => {
     </div>
   );
 };
-

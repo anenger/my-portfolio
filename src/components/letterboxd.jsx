@@ -11,57 +11,18 @@ import {
   filmInfo,
   filmTitle,
   filmYear,
-  ratingContainer,
-  starFilled,
-  starHalf,
   loadingState,
   errorState,
 } from "./letterboxd.module.css";
-
-const StarRating = ({ rating }) => {
-  if (!rating) return null;
-
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 !== 0;
-  const stars = [];
-
-  for (let i = 0; i < fullStars; i++) {
-    stars.push(
-      <span key={i} className={starFilled}>
-        ★
-      </span>
-    );
-  }
-
-  if (hasHalfStar) {
-    stars.push(
-      <span key="half" className={starHalf}>
-        ★
-      </span>
-    );
-  }
-
-  return <div className={ratingContainer}>{stars}</div>;
-};
+import { useQuery } from "@tanstack/react-query";
 
 export const Letterboxd = () => {
-  const [filmData, setFilmData] = React.useState(null);
-  const [loading, setLoading] = React.useState(true);
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["letterboxd"],
+    queryFn: () => fetch("/api/letterboxd").then((res) => res.json()),
+  });
 
-  React.useEffect(() => {
-    fetch("/api/letterboxd")
-      .then((response) => response.json())
-      .then((data) => {
-        setFilmData(data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setFilmData({ error: "Could not load Letterboxd data" });
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <div className={letterboxdContainer}>
         <div className={`${letterboxdCard} ${loadingState}`}>
@@ -72,18 +33,18 @@ export const Letterboxd = () => {
     );
   }
 
-  if (filmData?.error) {
+  if (error || !data || data.error) {
     return (
       <div className={letterboxdContainer}>
         <div className={`${letterboxdCard} ${errorState}`}>
           <SiLetterboxd className={letterboxdLogo} />
-          <p>{filmData.error}</p>
+          <p>{error?.message || data?.error || "Could not load Letterboxd data"}</p>
         </div>
       </div>
     );
   }
 
-  const { title, year, posterUrl, rating, profileUrl } = filmData;
+  const { title, year, posterUrl, profileUrl } = data;
 
   return (
     <div className={letterboxdContainer}>
@@ -111,7 +72,6 @@ export const Letterboxd = () => {
         <div className={filmInfo}>
           <span className={filmTitle}>{title}</span>
           {year && <span className={filmYear}>{year}</span>}
-          <StarRating rating={rating} />
         </div>
       </a>
     </div>

@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.90.16",
     "dotenv": "^16.6.1",
     "gatsby": "^5.15.0",
     "gatsby-omni-font-loader": "^2.0.2",

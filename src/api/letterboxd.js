@@ -21,23 +21,8 @@ function extractImageFromDescription(description) {
   return imgMatch ? imgMatch[1] : null;
 }
 
-function extractRatingFromDescription(description) {
-  if (!description) return null;
-  // Letterboxd uses star ratings like "★★★★" or "★★★½"
-  const starsMatch = description.match(/★+½?/);
-  if (starsMatch) {
-    const stars = starsMatch[0];
-    const fullStars = (stars.match(/★/g) || []).length;
-    const halfStar = stars.includes("½") ? 0.5 : 0;
-    return fullStars + halfStar;
-  }
-  return null;
-}
-
 function parseRSSItem(itemXml) {
   const title = extractCDATA(extractTagContent(itemXml, "title"));
-  const link = extractTagContent(itemXml, "link");
-  const pubDate = extractTagContent(itemXml, "pubDate");
   const description = extractCDATA(extractTagContent(itemXml, "description"));
 
   // Parse the title - Letterboxd format is usually "Film Title, Year"
@@ -52,10 +37,7 @@ function parseRSSItem(itemXml) {
   return {
     title: filmTitle,
     year,
-    link,
-    pubDate,
     posterUrl: extractImageFromDescription(description),
-    rating: extractRatingFromDescription(description),
   };
 }
 
@@ -93,9 +75,6 @@ export default async function handler(req, res) {
       title: recentFilm.title,
       year: recentFilm.year,
       posterUrl: recentFilm.posterUrl,
-      rating: recentFilm.rating,
-      link: recentFilm.link,
-      watchedDate: recentFilm.pubDate,
       profileUrl: `https://letterboxd.com/${LETTERBOXD_USERNAME}/`,
     });
   } catch (error) {
