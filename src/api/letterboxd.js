@@ -1,4 +1,5 @@
 import fetch from "node-fetch";
+import { decode } from "he";
 
 const LETTERBOXD_USERNAME = process.env.LETTERBOXD_USERNAME;
 
@@ -22,7 +23,7 @@ function extractImageFromDescription(description) {
 }
 
 function parseRSSItem(itemXml) {
-  const title = extractCDATA(extractTagContent(itemXml, "title"));
+  const title = decode(extractCDATA(extractTagContent(itemXml, "title")));
   const description = extractCDATA(extractTagContent(itemXml, "description"));
 
   // Parse the title - Letterboxd format is usually "Film Title, Year"
