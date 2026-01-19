@@ -1,0 +1,81 @@
+import { NextResponse } from "next/server";
+import fetch from "node-fetch";
+import { decode } from "he";
+
+const LETTERBOXD_USERNAME = process.env.LETTERBOXD_USERNAME;
+
+function extractTagContent(xml, tagName) {
+  const regex = new RegExp(`<${tagName}[^>]*>([\\s\\S]*?)<\\/${tagName}>`, "i");
+  const match = xml.match(regex);
+  return match ? match[1].trim() : null;
+}
+
+function extractCDATA(content) {
+  if (!content) return null;
+  const cdataMatch = content.match(/<!\[CDATA\[([\s\S]*?)\]\]>/);
+  return cdataMatch ? cdataMatch[1].trim() : content;
+}
+
+function extractImageFromDescription(description) {
+  if (!description) return null;
+  const imgMatch = description.match(/<img[^>]+src="([^"]+)"/);
+  return imgMatch ? imgMatch[1] : null;
+}
+
+function parseRSSItem(itemXml) {
+  const title = decode(extractCDATA(extractTagContent(itemXml, "title")));
+  const description = extractCDATA(extractTagContent(itemXml, "description"));
+
+  let filmTitle = title;
+  let year = null;
+  const titleMatch = title?.match(/^(.+),\s*(\d{4})$/);
+  if (titleMatch) {
+    filmTitle = titleMatch[1].trim();
+    year = titleMatch[2];
+  }
+
+  return {
+    title: filmTitle,
+    year,
+    posterUrl: extractImageFromDescription(description),
+  };
+}
+
+export async function GET() {
+  if (!LETTERBOXD_USERNAME) {
+    return NextResponse.json({ error: "Letterboxd username not configured" });
+  }
+
+  try {
+    const rssUrl = `https://letterboxd.com/${LETTERBOXD_USERNAME}/rss/`;
+
+    const response = await fetch(rssUrl, {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (compatible; Portfolio/1.0)",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`RSS fetch failed: ${response.status}`);
+    }
+
+    const xml = await response.text();
+    const itemMatches = xml.match(/<item>[\s\S]*?<\/item>/g);
+
+    if (!itemMatches || itemMatches.length === 0) {
+      return NextResponse.json({ error: "No films found" });
+    }
+
+    const recentFilm = parseRSSItem(itemMatches[0]);
+
+    return NextResponse.json({
+      title: recentFilm.title,
+      year: recentFilm.year,
+      posterUrl: recentFilm.posterUrl,
+      profileUrl: `https://letterboxd.com/${LETTERBOXD_USERNAME}/`,
+    });
+  } catch (error) {
+    console.error("Letterboxd RSS error:", error);
+    return NextResponse.json({ error: "Something went wrong with Letterboxd" });
+  }
+}
