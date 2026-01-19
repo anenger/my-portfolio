@@ -1,4 +1,5 @@
 import fetch from "node-fetch";
+import { decode } from "he";
 
 const GOODREADS_USER_ID = process.env.GOODREADS_USER_ID;
 const GOODREADS_SHELF = process.env.GOODREADS_SHELF;
@@ -36,11 +37,15 @@ function cleanUrl(url) {
 }
 
 function parseRSSItem(itemXml) {
-  const title = extractCDATA(extractTagContent(itemXml, "title"));
-  const description = extractCDATA(extractTagContent(itemXml, "description"));
+  const title = decode(extractCDATA(extractTagContent(itemXml, "title")));
+  const description = decode(
+    extractCDATA(extractTagContent(itemXml, "description")),
+  );
 
   // Extract author from author_name tag if present
-  const authorName = extractCDATA(extractTagContent(itemXml, "author_name"));
+  const authorName = decode(
+    extractCDATA(extractTagContent(itemXml, "author_name")),
+  );
 
   // Extract book image - try multiple sources
   // Goodreads RSS uses book_large_image_url, book_medium_image_url, book_small_image_url, book_image_url

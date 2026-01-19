@@ -24,7 +24,9 @@ function extractImageFromDescription(description) {
 
 function parseRSSItem(itemXml) {
   const title = decode(extractCDATA(extractTagContent(itemXml, "title")));
-  const description = extractCDATA(extractTagContent(itemXml, "description"));
+  const description = decode(
+    extractCDATA(extractTagContent(itemXml, "description")),
+  );
 
   // Parse the title - Letterboxd format is usually "Film Title, Year"
   let filmTitle = title;
